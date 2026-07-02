@@ -1,0 +1,95 @@
+{
+  "module": {
+    "id": "mod_advanced",
+    "title_fr": "Maîtriser la langue",
+    "title_ar": "إِتقان اللُّغة",
+    "icon": "🎓",
+    "lessons": []
+  },
+  "lessons": [
+    {
+      "id": "les_adv_01",
+      "title_fr": "Les formes dérivées du verbe",
+      "xp": 25,
+      "concept_fr": "À partir d'une racine de 3 lettres, l'arabe dérive des verbes aux sens précis. Connaître les schèmes (les « formes ») permet de deviner le sens de milliers de verbes.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "دَرَسَ ← دَرَّسَ", "prompt_fr": "Forme I : دَرَسَ (étudier).\nForme II فَعَّلَ (intensif/causatif) : دَرَّسَ = enseigner (faire étudier).\nForme IV أَفعَلَ (causatif) : أَخرَجَ = faire sortir (de خَرَجَ, sortir).\nForme X اِستَفعَلَ (demander) : اِستَخرَجَ = extraire." },
+        { "type": "mcq", "prompt_fr": "دَرَّسَ (forme II de دَرَسَ « étudier ») signifie…", "options": ["enseigner", "étudier beaucoup", "être étudié", "demander à étudier"], "answer": "enseigner" },
+        { "type": "mcq", "prompt_fr": "Si عَلِمَ = savoir, que signifie أَعلَمَ (forme IV) ?", "options": ["informer (faire savoir)", "apprendre", "être connu", "s'informer"], "answer": "informer (faire savoir)" },
+        { "type": "mcq", "prompt_fr": "La forme X اِستَفعَلَ exprime souvent…", "options": ["la demande (chercher à…)", "la réciprocité", "le passif", "la répétition"], "answer": "la demande (chercher à…)" },
+        { "type": "mcq", "prompt_fr": "Si غَفَرَ = pardonner, que signifie اِستَغفَرَ ?", "options": ["demander pardon", "pardonner beaucoup", "être pardonné", "faire pardonner"], "answer": "demander pardon" },
+        { "type": "match", "prompt_fr": "Associe chaque forme à sa nuance.", "pairs": [ { "left": "فَعَلَ (I)", "right": "sens de base" }, { "left": "فَعَّلَ (II)", "right": "causatif / intensif" }, { "left": "أَفعَلَ (IV)", "right": "causatif" }, { "left": "اِستَفعَلَ (X)", "right": "demande" } ] }
+      ]
+    },
+    {
+      "id": "les_adv_02",
+      "title_fr": "Le subjonctif : أَنْ + verbe",
+      "xp": 25,
+      "concept_fr": "Après أَنْ (que), لِـ (pour), et لَنْ (négation du futur), le verbe au présent passe au subjonctif (المَنصوب) : la voyelle finale devient fatḥa.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "أُريدُ أَنْ أَذهَبَ", "prompt_fr": "يَذهَبُ (il va) ← أَنْ يَذهَبَ (qu'il aille).\nأُريدُ أَنْ أَذهَبَ = je veux aller.\nلَنْ أَذهَبَ = je n'irai pas (futur nié)." },
+        { "type": "mcq", "prompt_fr": "« Je veux boire » se dit…", "options": ["أُريدُ أَنْ أَشرَبَ", "أُريدُ أَشرَبُ", "أُريدُ شَرِبتُ", "أَشرَبُ أَنْ أُريدَ"], "answer": "أُريدُ أَنْ أَشرَبَ" },
+        { "type": "mcq", "prompt_fr": "« لَنْ » exprime…", "options": ["la négation du futur", "la négation du passé", "une question", "un ordre"], "answer": "la négation du futur" },
+        { "type": "mcq", "prompt_fr": "Après أَنْ, la fin du verbe يَكتُبُ devient…", "options": ["يَكتُبَ", "يَكتُبْ", "يَكتُبُ", "كَتَبَ"], "answer": "يَكتُبَ" },
+        { "type": "build", "prompt_fr": "Construis : « Je veux apprendre l'arabe ».", "tokens": ["أُريدُ", "أَنْ", "أَتَعَلَّمَ", "العَرَبِيّةَ", "لَنْ"], "answer": ["أُريدُ", "أَنْ", "أَتَعَلَّمَ", "العَرَبِيّةَ"] },
+        { "type": "match", "prompt_fr": "Associe chaque particule.", "pairs": [ { "left": "أَنْ", "right": "que (+ subjonctif)" }, { "left": "لَنْ", "right": "ne… jamais (futur)" }, { "left": "لِـ", "right": "pour (but)" } ] }
+      ]
+    },
+    {
+      "id": "les_adv_03",
+      "title_fr": "Le jussif : لَمْ + verbe",
+      "xp": 25,
+      "concept_fr": "لَمْ + présent apocopé (المَجزوم) nie le passé de façon soutenue : لَمْ أَذهَبْ = je ne suis pas allé. C'est la négation élégante du passé, très fréquente à l'écrit.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "لَمْ أَذهَبْ", "prompt_fr": "ما ذَهَبتُ = لَمْ أَذهَبْ (je ne suis pas allé).\nAprès لَمْ, la voyelle finale du verbe devient sukūn : يَكتُبُ ← لَمْ يَكتُبْ." },
+        { "type": "mcq", "prompt_fr": "« لَمْ يَكتُبْ » signifie…", "options": ["Il n'a pas écrit", "Il n'écrira pas", "Il n'écrit pas", "Qu'il écrive"], "answer": "Il n'a pas écrit" },
+        { "type": "mcq", "prompt_fr": "Quelle phrase est correcte pour « je n'ai pas compris » ?", "options": ["لَمْ أَفهَمْ", "لَمْ أَفهَمُ", "لَنْ أَفهَمْ", "لا أَفهَمْ"], "answer": "لَمْ أَفهَمْ" },
+        { "type": "mcq", "prompt_fr": "لَمْ se combine avec un verbe au…", "options": ["présent (forme apocopée)", "passé", "impératif", "participe"], "answer": "présent (forme apocopée)" },
+        { "type": "build", "prompt_fr": "Construis : « Il n'a pas bu le café ».", "tokens": ["لَمْ", "يَشرَبِ", "القَهوةَ", "لَنْ"], "answer": ["لَمْ", "يَشرَبِ", "القَهوةَ"] },
+        { "type": "match", "prompt_fr": "Associe chaque négation à son temps.", "pairs": [ { "left": "لا يَكتُبُ", "right": "présent" }, { "left": "لَمْ يَكتُبْ", "right": "passé (soutenu)" }, { "left": "لَنْ يَكتُبَ", "right": "futur" } ] }
+      ]
+    },
+    {
+      "id": "les_adv_04",
+      "title_fr": "La voix passive",
+      "xp": 25,
+      "concept_fr": "Le passif se forme en changeant les voyelles internes : كَتَبَ (il a écrit) ← كُتِبَ (il a été écrit) ; يَكتُبُ ← يُكتَبُ.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كُتِبَ الكِتابُ", "prompt_fr": "Passé passif : فُعِلَ — كُتِبَ الكِتابُ = le livre a été écrit.\nPrésent passif : يُفعَلُ — يُكتَبُ الدَّرسُ = la leçon est écrite." },
+        { "type": "mcq", "prompt_fr": "« شُرِبَ الماءُ » signifie…", "options": ["L'eau a été bue", "Il a bu l'eau", "L'eau boit", "Bois l'eau !"], "answer": "L'eau a été bue" },
+        { "type": "mcq", "prompt_fr": "Le passif de يَفتَحُ (il ouvre) est…", "options": ["يُفتَحُ", "فَتَحَ", "يَفتَحُ", "اِفتَحْ"], "answer": "يُفتَحُ" },
+        { "type": "mcq", "prompt_fr": "Au passé, le schéma du passif est…", "options": ["فُعِلَ", "فَعَلَ", "يُفعَلُ", "فاعِل"], "answer": "فُعِلَ" },
+        { "type": "match", "prompt_fr": "Associe actif et passif.", "pairs": [ { "left": "كَتَبَ", "right": "كُتِبَ" }, { "left": "فَتَحَ", "right": "فُتِحَ" }, { "left": "يَشرَبُ", "right": "يُشرَبُ" } ] }
+      ]
+    },
+    {
+      "id": "les_adv_05",
+      "title_fr": "Le duel (المُثَنّى)",
+      "xp": 25,
+      "concept_fr": "L'arabe a un nombre spécial pour « deux » : on ajoute ـانِ (sujet) ou ـَينِ (complément) au nom.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كِتابانِ", "prompt_fr": "كِتاب (un livre) ← كِتابانِ (deux livres).\nمُعَلِّمة (une enseignante) ← مُعَلِّمَتانِ (deux enseignantes).\nEn position de complément : قَرَأتُ كِتابَينِ = j'ai lu deux livres." },
+        { "type": "mcq", "prompt_fr": "« Deux maisons » (sujet) se dit…", "options": ["بَيتانِ", "بُيوت", "بَيتَينِ", "بَيت"], "answer": "بَيتانِ" },
+        { "type": "mcq", "prompt_fr": "« قَرَأتُ كِتابَينِ » signifie…", "options": ["J'ai lu deux livres", "J'ai lu des livres", "J'ai lu un livre", "Je lirai deux livres"], "answer": "J'ai lu deux livres" },
+        { "type": "mcq", "prompt_fr": "Le duel de طالِبة est…", "options": ["طالِبَتانِ", "طالِبات", "طالِبانِ", "طُلّاب"], "answer": "طالِبَتانِ" },
+        { "type": "match", "prompt_fr": "Associe singulier et duel.", "pairs": [ { "left": "كِتاب", "right": "كِتابانِ" }, { "left": "بَيت", "right": "بَيتانِ" }, { "left": "مُعَلِّمة", "right": "مُعَلِّمَتانِ" } ] }
+      ]
+    },
+    {
+      "id": "les_adv_06",
+      "title_fr": "Expressions et proverbes",
+      "xp": 30,
+      "concept_fr": "Pour parler comme un natif : quelques expressions incontournables et un proverbe célèbre.",
+      "exercises": [
+        { "type": "intro_word", "word": "إِن شاءَ الله", "prompt_fr": "إِن شاءَ الله (in shā’a-llāh) — « si Dieu le veut » : pour tout projet futur." },
+        { "type": "intro_word", "word": "يَعني", "prompt_fr": "يَعني (yaʿnī) — « c'est-à-dire / genre » : le mot de liaison le plus utilisé à l'oral." },
+        { "type": "intro_word", "word": "عَلى كُلِّ حال", "prompt_fr": "عَلى كُلِّ حال (ʿalā kulli ḥāl) — « en tout cas »." },
+        { "type": "intro_rule", "ar": "العِلمُ نورٌ", "prompt_fr": "Proverbe : العِلمُ نورٌ (al-ʿilmu nūr) = « Le savoir est une lumière »." },
+        { "type": "translate_choose", "prompt_fr": "Que signifie « العِلمُ نورٌ » ?", "options": ["Le savoir est une lumière", "La lumière du matin", "L'école est ouverte", "Le livre est utile"], "answer": "Le savoir est une lumière" },
+        { "type": "translate_choose", "prompt_fr": "Quel mot signifie « c'est-à-dire » ?", "options": ["يَعني", "إِن شاءَ الله", "عَلى كُلِّ حال", "مَرحَبًا"], "answer": "يَعني" },
+        { "type": "build", "prompt_fr": "Reconstruis le proverbe « Le savoir est une lumière ».", "tokens": ["العِلمُ", "نورٌ", "كِتابٌ", "بابٌ"], "answer": ["العِلمُ", "نورٌ"] },
+        { "type": "match", "prompt_fr": "Associe chaque expression.", "pairs": [ { "left": "إِن شاءَ الله", "right": "si Dieu le veut" }, { "left": "يَعني", "right": "c'est-à-dire" }, { "left": "عَلى كُلِّ حال", "right": "en tout cas" } ] }
+      ]
+    }
+  ]
+}

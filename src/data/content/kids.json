@@ -1,0 +1,198 @@
+{
+  "worlds": [
+    {
+      "id": "monde_animaux",
+      "title_fr": "Le monde des animaux",
+      "emoji": "🦁",
+      "color": "orange",
+      "mascot": "cat",
+      "games": [
+        {
+          "id": "kids_anim_01",
+          "title_fr": "Mes premiers animaux",
+          "emoji": "🐱",
+          "exercises": [
+            { "type": "intro_word", "word": "قِطّ", "emoji": "🐱", "prompt_fr": "قِطّ (qitt) — le chat !" },
+            { "type": "intro_word", "word": "كَلب", "emoji": "🐶", "prompt_fr": "كَلب (kalb) — le chien !" },
+            { "type": "intro_word", "word": "أَسَد", "emoji": "🦁", "prompt_fr": "أَسَد (asad) — le lion !" },
+            { "type": "translate_choose", "prompt_fr": "Où est le chat ?", "emoji": "🐱", "options": ["قِطّ", "كَلب", "أَسَد"], "answer": "قِطّ" },
+            { "type": "translate_choose", "prompt_fr": "Où est le lion ?", "emoji": "🦁", "options": ["أَسَد", "قِطّ", "كَلب"], "answer": "أَسَد" },
+            { "type": "listen_choose", "prompt_fr": "Écoute bien… quel animal entends-tu ?", "tts": "كَلب", "options": ["كَلب", "قِطّ", "أَسَد"], "answer": "كَلب" },
+            { "type": "match", "prompt_fr": "Relie chaque animal à son nom !", "pairs": [ { "left": "🐱", "right": "قِطّ" }, { "left": "🐶", "right": "كَلب" }, { "left": "🦁", "right": "أَسَد" } ] }
+          ]
+        },
+        {
+          "id": "kids_anim_02",
+          "title_fr": "Au zoo !",
+          "emoji": "🐘",
+          "exercises": [
+            { "type": "intro_word", "word": "فيل", "emoji": "🐘", "prompt_fr": "فيل (fīl) — l'éléphant !" },
+            { "type": "intro_word", "word": "قِرد", "emoji": "🐵", "prompt_fr": "قِرد (qird) — le singe !" },
+            { "type": "intro_word", "word": "زَرافة", "emoji": "🦒", "prompt_fr": "زَرافة (zarāfa) — la girafe !" },
+            { "type": "translate_choose", "prompt_fr": "Où est l'éléphant ?", "emoji": "🐘", "options": ["فيل", "قِرد", "زَرافة"], "answer": "فيل" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… quel animal entends-tu ?", "tts": "زَرافة", "options": ["زَرافة", "فيل", "قِرد"], "answer": "زَرافة" },
+            { "type": "match", "prompt_fr": "Relie chaque animal à son nom !", "pairs": [ { "left": "🐘", "right": "فيل" }, { "left": "🐵", "right": "قِرد" }, { "left": "🦒", "right": "زَرافة" } ] }
+          ]
+        },
+        {
+          "id": "kids_anim_03",
+          "title_fr": "À la ferme",
+          "emoji": "🐔",
+          "exercises": [
+            { "type": "intro_word", "word": "دَجاجة", "emoji": "🐔", "prompt_fr": "دَجاجة (dajāja) — la poule !" },
+            { "type": "intro_word", "word": "حِصان", "emoji": "🐴", "prompt_fr": "حِصان (ḥiṣān) — le cheval !" },
+            { "type": "intro_word", "word": "بَقَرة", "emoji": "🐮", "prompt_fr": "بَقَرة (baqara) — la vache !" },
+            { "type": "translate_choose", "prompt_fr": "Où est la vache ?", "emoji": "🐮", "options": ["بَقَرة", "دَجاجة", "حِصان"], "answer": "بَقَرة" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… quel animal entends-tu ?", "tts": "حِصان", "options": ["حِصان", "بَقَرة", "دَجاجة"], "answer": "حِصان" },
+            { "type": "match", "prompt_fr": "Relie chaque animal à son nom !", "pairs": [ { "left": "🐔", "right": "دَجاجة" }, { "left": "🐴", "right": "حِصان" }, { "left": "🐮", "right": "بَقَرة" } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monde_couleurs",
+      "title_fr": "Couleurs et nombres",
+      "emoji": "🌈",
+      "color": "purple",
+      "mascot": "fennec",
+      "games": [
+        {
+          "id": "kids_coul_01",
+          "title_fr": "L'arc-en-ciel",
+          "emoji": "🎨",
+          "exercises": [
+            { "type": "intro_word", "word": "أَحمَر", "emoji": "🔴", "prompt_fr": "أَحمَر (aḥmar) — rouge, comme la fraise ! 🍓" },
+            { "type": "intro_word", "word": "أَزرَق", "emoji": "🔵", "prompt_fr": "أَزرَق (azraq) — bleu, comme le ciel ! ☁️" },
+            { "type": "intro_word", "word": "أَصفَر", "emoji": "🟡", "prompt_fr": "أَصفَر (aṣfar) — jaune, comme le soleil ! ☀️" },
+            { "type": "translate_choose", "prompt_fr": "De quelle couleur est le soleil ?", "emoji": "☀️", "options": ["أَصفَر", "أَحمَر", "أَزرَق"], "answer": "أَصفَر" },
+            { "type": "translate_choose", "prompt_fr": "De quelle couleur est la fraise ?", "emoji": "🍓", "options": ["أَحمَر", "أَزرَق", "أَصفَر"], "answer": "أَحمَر" },
+            { "type": "match", "prompt_fr": "Relie chaque couleur !", "pairs": [ { "left": "🔴", "right": "أَحمَر" }, { "left": "🔵", "right": "أَزرَق" }, { "left": "🟡", "right": "أَصفَر" } ] }
+          ]
+        },
+        {
+          "id": "kids_coul_02",
+          "title_fr": "Je compte jusqu'à 3",
+          "emoji": "🔢",
+          "exercises": [
+            { "type": "intro_word", "word": "واحِد", "emoji": "1️⃣", "prompt_fr": "واحِد (wāḥid) — un !" },
+            { "type": "intro_word", "word": "اِثنان", "emoji": "2️⃣", "prompt_fr": "اِثنان (ithnān) — deux !" },
+            { "type": "intro_word", "word": "ثَلاثة", "emoji": "3️⃣", "prompt_fr": "ثَلاثة (thalātha) — trois !" },
+            { "type": "translate_choose", "prompt_fr": "Combien y a-t-il de ballons ?", "emoji": "🎈🎈", "options": ["اِثنان", "واحِد", "ثَلاثة"], "answer": "اِثنان" },
+            { "type": "translate_choose", "prompt_fr": "Combien y a-t-il d'étoiles ?", "emoji": "⭐⭐⭐", "options": ["ثَلاثة", "اِثنان", "واحِد"], "answer": "ثَلاثة" },
+            { "type": "listen_choose", "prompt_fr": "Écoute le nombre !", "tts": "واحِد", "options": ["1️⃣", "2️⃣", "3️⃣"], "answer": "1️⃣" },
+            { "type": "match", "prompt_fr": "Relie chaque nombre !", "pairs": [ { "left": "1️⃣", "right": "واحِد" }, { "left": "2️⃣", "right": "اِثنان" }, { "left": "3️⃣", "right": "ثَلاثة" } ] }
+          ]
+        },
+        {
+          "id": "kids_coul_03",
+          "title_fr": "Je compte jusqu'à 5",
+          "emoji": "✋",
+          "exercises": [
+            { "type": "intro_word", "word": "أَربَعة", "emoji": "4️⃣", "prompt_fr": "أَربَعة (arbaʿa) — quatre !" },
+            { "type": "intro_word", "word": "خَمسة", "emoji": "5️⃣", "prompt_fr": "خَمسة (khamsa) — cinq, comme les doigts de la main ! ✋" },
+            { "type": "translate_choose", "prompt_fr": "Combien de doigts sur une main ?", "emoji": "✋", "options": ["خَمسة", "أَربَعة", "ثَلاثة"], "answer": "خَمسة" },
+            { "type": "translate_choose", "prompt_fr": "Combien y a-t-il de cœurs ?", "emoji": "❤️❤️❤️❤️", "options": ["أَربَعة", "خَمسة", "اِثنان"], "answer": "أَربَعة" },
+            { "type": "listen_choose", "prompt_fr": "Écoute le nombre !", "tts": "خَمسة", "options": ["5️⃣", "4️⃣", "3️⃣"], "answer": "5️⃣" },
+            { "type": "match", "prompt_fr": "Relie chaque nombre !", "pairs": [ { "left": "4️⃣", "right": "أَربَعة" }, { "left": "5️⃣", "right": "خَمسة" }, { "left": "1️⃣", "right": "واحِد" } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monde_famille",
+      "title_fr": "Ma famille et moi",
+      "emoji": "🏠",
+      "color": "sky",
+      "mascot": "owl",
+      "games": [
+        {
+          "id": "kids_fam_01",
+          "title_fr": "Papa et maman",
+          "emoji": "👨‍👩‍👧",
+          "exercises": [
+            { "type": "intro_word", "word": "بابا", "emoji": "👨", "prompt_fr": "بابا (bābā) — papa !" },
+            { "type": "intro_word", "word": "ماما", "emoji": "👩", "prompt_fr": "ماما (māmā) — maman !" },
+            { "type": "intro_word", "word": "أَخ", "emoji": "👦", "prompt_fr": "أَخ (akh) — le frère !" },
+            { "type": "intro_word", "word": "أُخت", "emoji": "👧", "prompt_fr": "أُخت (ukht) — la sœur !" },
+            { "type": "translate_choose", "prompt_fr": "Où est maman ?", "emoji": "👩", "options": ["ماما", "بابا", "أَخ"], "answer": "ماما" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… qui entends-tu ?", "tts": "بابا", "options": ["👨", "👩", "👧"], "answer": "👨" },
+            { "type": "match", "prompt_fr": "Relie la famille !", "pairs": [ { "left": "👨", "right": "بابا" }, { "left": "👩", "right": "ماما" }, { "left": "👧", "right": "أُخت" } ] }
+          ]
+        },
+        {
+          "id": "kids_fam_02",
+          "title_fr": "Mon corps",
+          "emoji": "🙆",
+          "exercises": [
+            { "type": "intro_word", "word": "رَأس", "emoji": "🙂", "prompt_fr": "رَأس (ra’s) — la tête !" },
+            { "type": "intro_word", "word": "يَد", "emoji": "✋", "prompt_fr": "يَد (yad) — la main !" },
+            { "type": "intro_word", "word": "عَين", "emoji": "👁️", "prompt_fr": "عَين (ʿayn) — l'œil !" },
+            { "type": "translate_choose", "prompt_fr": "Où est la main ?", "emoji": "✋", "options": ["يَد", "رَأس", "عَين"], "answer": "يَد" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… quelle partie du corps ?", "tts": "عَين", "options": ["👁️", "✋", "🙂"], "answer": "👁️" },
+            { "type": "match", "prompt_fr": "Relie chaque partie du corps !", "pairs": [ { "left": "🙂", "right": "رَأس" }, { "left": "✋", "right": "يَد" }, { "left": "👁️", "right": "عَين" } ] }
+          ]
+        },
+        {
+          "id": "kids_fam_03",
+          "title_fr": "Dans ma maison",
+          "emoji": "🛋️",
+          "exercises": [
+            { "type": "intro_word", "word": "بَيت", "emoji": "🏠", "prompt_fr": "بَيت (bayt) — la maison !" },
+            { "type": "intro_word", "word": "باب", "emoji": "🚪", "prompt_fr": "باب (bāb) — la porte !" },
+            { "type": "intro_word", "word": "سَرير", "emoji": "🛏️", "prompt_fr": "سَرير (sarīr) — le lit !" },
+            { "type": "translate_choose", "prompt_fr": "Où est la porte ?", "emoji": "🚪", "options": ["باب", "بَيت", "سَرير"], "answer": "باب" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… qu'entends-tu ?", "tts": "سَرير", "options": ["🛏️", "🚪", "🏠"], "answer": "🛏️" },
+            { "type": "match", "prompt_fr": "Relie chaque objet !", "pairs": [ { "left": "🏠", "right": "بَيت" }, { "left": "🚪", "right": "باب" }, { "left": "🛏️", "right": "سَرير" } ] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monde_miam",
+      "title_fr": "Miam miam !",
+      "emoji": "🍎",
+      "color": "green",
+      "mascot": "camel",
+      "games": [
+        {
+          "id": "kids_miam_01",
+          "title_fr": "Les fruits",
+          "emoji": "🍌",
+          "exercises": [
+            { "type": "intro_word", "word": "تُفّاحة", "emoji": "🍎", "prompt_fr": "تُفّاحة (tuffāḥa) — la pomme !" },
+            { "type": "intro_word", "word": "مَوزة", "emoji": "🍌", "prompt_fr": "مَوزة (mawza) — la banane !" },
+            { "type": "intro_word", "word": "بُرتُقالة", "emoji": "🍊", "prompt_fr": "بُرتُقالة (burtuqāla) — l'orange !" },
+            { "type": "translate_choose", "prompt_fr": "Où est la banane ?", "emoji": "🍌", "options": ["مَوزة", "تُفّاحة", "بُرتُقالة"], "answer": "مَوزة" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… quel fruit entends-tu ?", "tts": "تُفّاحة", "options": ["🍎", "🍌", "🍊"], "answer": "🍎" },
+            { "type": "match", "prompt_fr": "Relie chaque fruit !", "pairs": [ { "left": "🍎", "right": "تُفّاحة" }, { "left": "🍌", "right": "مَوزة" }, { "left": "🍊", "right": "بُرتُقالة" } ] }
+          ]
+        },
+        {
+          "id": "kids_miam_02",
+          "title_fr": "À table !",
+          "emoji": "🍽️",
+          "exercises": [
+            { "type": "intro_word", "word": "خُبز", "emoji": "🍞", "prompt_fr": "خُبز (khubz) — le pain !" },
+            { "type": "intro_word", "word": "حَليب", "emoji": "🥛", "prompt_fr": "حَليب (ḥalīb) — le lait !" },
+            { "type": "intro_word", "word": "ماء", "emoji": "💧", "prompt_fr": "ماء (mā’) — l'eau !" },
+            { "type": "translate_choose", "prompt_fr": "Où est le lait ?", "emoji": "🥛", "options": ["حَليب", "خُبز", "ماء"], "answer": "حَليب" },
+            { "type": "listen_choose", "prompt_fr": "Écoute… qu'entends-tu ?", "tts": "ماء", "options": ["💧", "🥛", "🍞"], "answer": "💧" },
+            { "type": "match", "prompt_fr": "Relie chaque aliment !", "pairs": [ { "left": "🍞", "right": "خُبز" }, { "left": "🥛", "right": "حَليب" }, { "left": "💧", "right": "ماء" } ] }
+          ]
+        },
+        {
+          "id": "kids_miam_03",
+          "title_fr": "J'aime… !",
+          "emoji": "😋",
+          "exercises": [
+            { "type": "intro_word", "word": "أُحِبُّ", "emoji": "❤️", "prompt_fr": "أُحِبُّ (uḥibbu) — « j'aime » !" },
+            { "type": "intro_rule", "ar": "أُحِبُّ التُّفّاحَ", "prompt_fr": "أُحِبُّ التُّفّاحَ = j'aime les pommes ! 🍎\nأُحِبُّ الحَليبَ = j'aime le lait ! 🥛" },
+            { "type": "translate_choose", "prompt_fr": "Comment dire « j'aime » ?", "emoji": "❤️", "options": ["أُحِبُّ", "أَشرَبُ", "آكُلُ"], "answer": "أُحِبُّ" },
+            { "type": "build", "prompt_fr": "Construis : « J'aime le lait » 🥛", "tokens": ["أُحِبُّ", "الحَليبَ", "الخُبزَ"], "answer": ["أُحِبُّ", "الحَليبَ"] },
+            { "type": "listen_choose", "prompt_fr": "Écoute la phrase !", "tts": "أُحِبُّ التُّفّاحَ", "options": ["🍎", "🥛", "🍞"], "answer": "🍎" }
+          ]
+        }
+      ]
+    }
+  ]
+}
