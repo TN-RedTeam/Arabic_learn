@@ -1,0 +1,108 @@
+{
+  "module": {
+    "id": "mod_gram_b1",
+    "title_fr": "S'exprimer au quotidien",
+    "title_ar": "التَّعبير اليَومِيّ",
+    "icon": "💬",
+    "lessons": []
+  },
+  "lessons": [
+    {
+      "id": "les_b1_01",
+      "title_fr": "Le passé (الماضي)",
+      "xp": 20,
+      "concept_fr": "Le verbe arabe au passé se conjugue avec des suffixes. La forme de base est la 3e personne du masculin singulier : كَتَبَ (kataba) = « il a écrit ».",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كَتَبَ", "prompt_fr": "كَتَبَ (kataba) = il a écrit.\nكَتَبَتْ (katabat) = elle a écrit.\nكَتَبْتُ (katabtu) = j'ai écrit.\nكَتَبْتَ (katabta) = tu as écrit (h).\nكَتَبْنا (katabnā) = nous avons écrit." },
+        { "type": "mcq", "prompt_fr": "« كَتَبَتْ » signifie…", "options": ["Elle a écrit", "Il a écrit", "J'ai écrit", "Nous avons écrit"], "answer": "Elle a écrit" },
+        { "type": "mcq", "prompt_fr": "Comment dit-on « j'ai écrit » ?", "options": ["كَتَبْتُ", "كَتَبَ", "كَتَبْنا", "كَتَبَتْ"], "answer": "كَتَبْتُ" },
+        { "type": "mcq", "prompt_fr": "Avec شَرِبَ (boire) : « nous avons bu » se dit…", "options": ["شَرِبْنا", "شَرِبَ", "شَرِبْتُ", "شَرِبَتْ"], "answer": "شَرِبْنا" },
+        { "type": "build", "prompt_fr": "Construis : « L'enfant a bu le lait ».", "tokens": ["شَرِبَ", "الوَلَدُ", "الحَليبَ", "الماءَ"], "answer": ["شَرِبَ", "الوَلَدُ", "الحَليبَ"] },
+        { "type": "match", "prompt_fr": "Associe chaque forme du passé.", "pairs": [ { "left": "كَتَبَ", "right": "il a écrit" }, { "left": "كَتَبَتْ", "right": "elle a écrit" }, { "left": "كَتَبْتُ", "right": "j'ai écrit" }, { "left": "كَتَبْنا", "right": "nous avons écrit" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_02",
+      "title_fr": "Le présent (المضارع)",
+      "xp": 20,
+      "concept_fr": "Au présent, le verbe prend un préfixe : أَ (je), تَـ (tu / elle), يَـ (il), نَـ (nous).",
+      "exercises": [
+        { "type": "intro_rule", "ar": "يَكتُبُ", "prompt_fr": "أَكتُبُ (aktubu) = j'écris.\nتَكتُبُ (taktubu) = tu écris / elle écrit.\nيَكتُبُ (yaktubu) = il écrit.\nنَكتُبُ (naktubu) = nous écrivons." },
+        { "type": "mcq", "prompt_fr": "« نَكتُبُ » signifie…", "options": ["Nous écrivons", "J'écris", "Il écrit", "Elle écrit"], "answer": "Nous écrivons" },
+        { "type": "mcq", "prompt_fr": "Quel préfixe marque « il » au présent ?", "options": ["يَـ", "أَ", "تَـ", "نَـ"], "answer": "يَـ" },
+        { "type": "mcq", "prompt_fr": "Avec دَرَسَ (étudier) : « j'étudie » se dit…", "options": ["أَدرُسُ", "يَدرُسُ", "نَدرُسُ", "تَدرُسُ"], "answer": "أَدرُسُ" },
+        { "type": "build", "prompt_fr": "Construis : « Il écrit une lettre ».", "tokens": ["يَكتُبُ", "رِسالةً", "أَكتُبُ", "كِتابًا"], "answer": ["يَكتُبُ", "رِسالةً"] },
+        { "type": "match", "prompt_fr": "Associe chaque forme du présent.", "pairs": [ { "left": "أَكتُبُ", "right": "j'écris" }, { "left": "يَكتُبُ", "right": "il écrit" }, { "left": "تَكتُبُ", "right": "elle écrit" }, { "left": "نَكتُبُ", "right": "nous écrivons" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_03",
+      "title_fr": "La négation",
+      "xp": 20,
+      "concept_fr": "Trois outils principaux : لا + présent (ne… pas), ما + passé, et لَيسَ pour nier une phrase nominale.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "لا أَفهَمُ", "prompt_fr": "لا أَكتُبُ = je n'écris pas (présent).\nما كَتَبَ = il n'a pas écrit (passé).\nلَيسَ طالِبًا = il n'est pas étudiant (phrase nominale)." },
+        { "type": "mcq", "prompt_fr": "Comment nier un verbe au présent ?", "options": ["لا", "ما", "لَيسَ", "لَن"], "answer": "لا" },
+        { "type": "mcq", "prompt_fr": "« ما شَرِبَ » signifie…", "options": ["Il n'a pas bu", "Il ne boit pas", "Il n'est pas buveur", "Il boira"], "answer": "Il n'a pas bu" },
+        { "type": "mcq", "prompt_fr": "Pour dire « il n'est pas enseignant », on utilise…", "options": ["لَيسَ", "لا", "ما", "هَل"], "answer": "لَيسَ" },
+        { "type": "build", "prompt_fr": "Construis : « Je ne comprends pas la leçon ».", "tokens": ["لا", "أَفهَمُ", "الدَّرسَ", "ما"], "answer": ["لا", "أَفهَمُ", "الدَّرسَ"] },
+        { "type": "match", "prompt_fr": "Associe chaque négation.", "pairs": [ { "left": "لا + présent", "right": "ne… pas (maintenant)" }, { "left": "ما + passé", "right": "ne… pas (hier)" }, { "left": "لَيسَ", "right": "n'est pas" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_04",
+      "title_fr": "Les pluriels",
+      "xp": 20,
+      "concept_fr": "Pluriel « sain » : on ajoute ـونَ (masculin) ou ـات (féminin). Beaucoup de mots ont un pluriel « brisé » : le mot change de forme intérieure.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كُتُب", "prompt_fr": "مُعَلِّم ← مُعَلِّمونَ (enseignants) : pluriel sain masculin.\nمُعَلِّمة ← مُعَلِّمات (enseignantes) : pluriel sain féminin.\nكِتاب ← كُتُب (livres), بَيت ← بُيوت (maisons) : pluriels brisés." },
+        { "type": "mcq", "prompt_fr": "Quel est le pluriel de كِتاب (livre) ?", "options": ["كُتُب", "كِتابونَ", "كِتابات", "كاتِب"], "answer": "كُتُب" },
+        { "type": "mcq", "prompt_fr": "Quel est le pluriel de مُعَلِّمة (enseignante) ?", "options": ["مُعَلِّمات", "مُعَلِّمونَ", "مَعالِم", "مُعَلِّم"], "answer": "مُعَلِّمات" },
+        { "type": "mcq", "prompt_fr": "بُيوت est le pluriel de…", "options": ["بَيت (maison)", "بِنت (fille)", "باب (porte)", "بَحر (mer)"], "answer": "بَيت (maison)" },
+        { "type": "match", "prompt_fr": "Associe chaque singulier à son pluriel.", "pairs": [ { "left": "كِتاب", "right": "كُتُب" }, { "left": "بَيت", "right": "بُيوت" }, { "left": "مُعَلِّم", "right": "مُعَلِّمونَ" }, { "left": "طالِبة", "right": "طالِبات" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_05",
+      "title_fr": "Les possessifs",
+      "xp": 20,
+      "concept_fr": "« Mon, ton, son… » sont des suffixes attachés au nom : كِتابي = mon livre.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كِتابي", "prompt_fr": "كِتابي (kitābī) = mon livre.\nكِتابُكَ (kitābuka) = ton livre (h).\nكِتابُكِ (kitābuki) = ton livre (f).\nكِتابُهُ (kitābuhu) = son livre (à lui).\nكِتابُها (kitābuhā) = son livre (à elle)." },
+        { "type": "mcq", "prompt_fr": "« بَيتُها » signifie…", "options": ["Sa maison (à elle)", "Sa maison (à lui)", "Ma maison", "Ta maison"], "answer": "Sa maison (à elle)" },
+        { "type": "mcq", "prompt_fr": "Comment dit-on « mon père » ?", "options": ["أَبي", "أَبوكَ", "أَبوهُ", "أَب"], "answer": "أَبي" },
+        { "type": "mcq", "prompt_fr": "Quel suffixe signifie « à lui » ?", "options": ["ـهُ", "ـها", "ـي", "ـكَ"], "answer": "ـهُ" },
+        { "type": "build", "prompt_fr": "Construis : « Ma maison est grande ».", "tokens": ["بَيتي", "كَبيرٌ", "بَيتُكَ", "صَغيرٌ"], "answer": ["بَيتي", "كَبيرٌ"] },
+        { "type": "match", "prompt_fr": "Associe chaque possessif.", "pairs": [ { "left": "كِتابي", "right": "mon livre" }, { "left": "كِتابُكَ", "right": "ton livre (h)" }, { "left": "كِتابُهُ", "right": "son livre (lui)" }, { "left": "كِتابُها", "right": "son livre (elle)" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_06",
+      "title_fr": "Poser des questions",
+      "xp": 20,
+      "concept_fr": "Les mots interrogatifs : هَل (est-ce que), ما/ماذا (que/quoi), مَن (qui), أَينَ (où), مَتى (quand), لِماذا (pourquoi), كَيفَ (comment).",
+      "exercises": [
+        { "type": "intro_rule", "ar": "كَيفَ حالُكَ؟", "prompt_fr": "هَل تَتَكَلَّمُ العَرَبِيّة؟ = Est-ce que tu parles arabe ?\nأَينَ تَسكُنُ؟ = Où habites-tu ?\nكَيفَ حالُكَ؟ = Comment vas-tu ?" },
+        { "type": "mcq", "prompt_fr": "Quel mot signifie « pourquoi » ?", "options": ["لِماذا", "مَتى", "أَينَ", "مَن"], "answer": "لِماذا" },
+        { "type": "mcq", "prompt_fr": "« مَتى » signifie…", "options": ["Quand", "Où", "Qui", "Comment"], "answer": "Quand" },
+        { "type": "mcq", "prompt_fr": "Pour une question fermée (oui/non), on commence par…", "options": ["هَل", "ماذا", "كَيفَ", "لِماذا"], "answer": "هَل" },
+        { "type": "build", "prompt_fr": "Construis : « Où habites-tu ? »", "tokens": ["أَينَ", "تَسكُنُ؟", "مَتى", "مَن"], "answer": ["أَينَ", "تَسكُنُ؟"] },
+        { "type": "match", "prompt_fr": "Associe chaque interrogatif.", "pairs": [ { "left": "مَن", "right": "qui" }, { "left": "أَينَ", "right": "où" }, { "left": "مَتى", "right": "quand" }, { "left": "كَيفَ", "right": "comment" } ] }
+      ]
+    },
+    {
+      "id": "les_b1_07",
+      "title_fr": "Comparer (plus grand que…)",
+      "xp": 20,
+      "concept_fr": "Le comparatif utilise le schème أَفعَل + مِن : أَكبَرُ مِن = plus grand que. Avec l'article ال, il devient superlatif : الأَكبَر = le plus grand.",
+      "exercises": [
+        { "type": "intro_rule", "ar": "أَكبَرُ مِن", "prompt_fr": "كَبير (grand) ← أَكبَرُ مِن (plus grand que).\nصَغير (petit) ← أَصغَرُ مِن (plus petit que).\nجَميل (beau) ← أَجمَلُ مِن (plus beau que)." },
+        { "type": "mcq", "prompt_fr": "« Plus petit que » se dit…", "options": ["أَصغَرُ مِن", "أَكبَرُ مِن", "صَغيرٌ", "الأَصغَر"], "answer": "أَصغَرُ مِن" },
+        { "type": "mcq", "prompt_fr": "« البَيتُ أَكبَرُ مِنَ الغُرفةِ » signifie…", "options": ["La maison est plus grande que la chambre", "La chambre est plus grande que la maison", "La maison est la plus grande", "La maison est grande"], "answer": "La maison est plus grande que la chambre" },
+        { "type": "mcq", "prompt_fr": "Comment dit-on « le plus beau » ?", "options": ["الأَجمَل", "أَجمَلُ مِن", "جَميلٌ", "أَجمَل"], "answer": "الأَجمَل" },
+        { "type": "build", "prompt_fr": "Construis : « Le chat est plus petit que le chien ».", "tokens": ["القِطُّ", "أَصغَرُ", "مِنَ", "الكَلبِ", "أَكبَرُ"], "answer": ["القِطُّ", "أَصغَرُ", "مِنَ", "الكَلبِ"] },
+        { "type": "match", "prompt_fr": "Associe adjectif et comparatif.", "pairs": [ { "left": "كَبير", "right": "أَكبَر" }, { "left": "صَغير", "right": "أَصغَر" }, { "left": "جَميل", "right": "أَجمَل" } ] }
+      ]
+    }
+  ]
+}

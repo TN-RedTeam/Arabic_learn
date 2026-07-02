@@ -1,22 +1,17 @@
-# Flutter / Dart
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-build/
-.pub-cache/
-.pub/
-*.lock
-!pubspec.lock
+# Dépendances et build
+node_modules/
+dist/
 
-# IDE
+# Journaux et caches
+npm-debug.log*
+.vite/
+
+# Éditeurs / OS
+.DS_Store
+Thumbs.db
 .idea/
 .vscode/
 *.iml
 
-# Generated platform folders (regenerate with `flutter create .`)
-# Keep these tracked once you customize them; ignored by default at scaffolding stage.
-
-# OS
-.DS_Store
-Thumbs.db
+# Artefacts TypeScript
+*.tsbuildinfo

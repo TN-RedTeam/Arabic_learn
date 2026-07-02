@@ -1,86 +1,80 @@
-# Arabic Learn
+# Alif — Apprendre l'arabe (application web)
 
-Application mobile (type Duolingo) pour apprendre **l'arabe littéraire (fusha)** :
-lecture de l'alphabet, vocabulaire et grammaire, par petites leçons ludiques.
+Application web **responsive** pour apprendre **l'arabe littéraire (fusha)**,
+du grand débutant (A0) au niveau avancé (B2+), dans l'esprit de Babbel —
+avec en plus un **espace enfants** ludique (mascottes cartoon, mondes colorés,
+étoiles à collectionner).
 
-> Cette application aide à débuter et à pratiquer régulièrement.
-> Elle ne remplace pas un vrai cours avec un professeur.
+> Cet outil aide à débuter et à pratiquer régulièrement.
+> Il ne remplace pas un vrai cours avec un professeur.
 
-## Stack
+## ✨ Fonctionnalités
 
-- **Flutter** (Dart) — Android d'abord, iOS ensuite.
-- **Riverpod** pour la gestion d'état.
-- Contenu pédagogique **piloté par des données** (`assets/content/*.json`).
+**Parcours adultes (style Babbel)**
 
-## Documentation
+- 5 niveaux CECRL : **A0** (alphabet + prononciation) → **A1** (premiers mots)
+  → **A2** (grammaire de base) → **B1** (conjugaison, s'exprimer) → **B2+**
+  (formes dérivées, passif, subjonctif, expressions).
+- ~40 leçons interactives : QCM, écoute, association de paires,
+  construction de phrases, découverte de mots/règles.
+- **Alphabet interactif** : les 28 lettres + hamza, avec les 4 formes
+  (isolée / initiale / médiane / finale) et l'audio.
+- **Points d'articulation (مخارج الحروف)** : schéma anatomique animé pour
+  placer les sons difficiles (ع، ح، خ، ق…).
+- **Audio sans fichiers** : prononciation via la synthèse vocale arabe du
+  navigateur (Web Speech API).
+- Progression persistée en local : XP, série quotidienne 🔥, étoiles ⭐,
+  badges, déblocage séquentiel des leçons.
 
-- [`docs/ROADMAP.md`](docs/ROADMAP.md) — plan de projet, architecture, monétisation.
-- [`docs/CURRICULUM.md`](docs/CURRICULUM.md) — programme pédagogique (alphabet → grammaire).
-- [`docs/COMMANDES_FLUTTER.md`](docs/COMMANDES_FLUTTER.md) — mémo de toutes les commandes Flutter.
+**Espace enfants (4–10 ans)**
 
-## Démarrer (Phase 0)
+- 4 mondes à explorer (animaux, couleurs & nombres, famille, nourriture)
+  avec des mascottes SVG dessinées façon dessin animé.
+- Mini-jeux illustrés par émojis : on écoute, on touche, on répète.
+- Récompenses en étoiles, interface géante et colorée.
 
-Ce dépôt contient le code applicatif (`lib/`), le contenu (`assets/`) et les
-tests. Les dossiers de plateforme (Android/iOS) se génèrent en une commande.
+## 🚀 Démarrer
 
-Prérequis : [installer Flutter](https://docs.flutter.dev/get-started/install).
-
-```bash
-# 1. Générer les dossiers de plateforme (android/, ios/, etc.)
-#    sans écraser lib/ ni pubspec.yaml :
-flutter create .
-
-# 2. Installer les dépendances
-flutter pub get
-
-# 3. Lancer sur un émulateur ou un appareil Android branché
-flutter run
-
-# 4. (optionnel) Lancer les tests
-flutter test
-```
-
-### Générer l'audio des lettres
-
-Les fichiers son ne sont pas versionnés : on les génère avec une voix arabe
-native via [`edge-tts`](https://github.com/rany2/edge-tts) (gratuit).
+Prérequis : [Node.js](https://nodejs.org) ≥ 20.
 
 ```bash
-pip install -r tools/requirements.txt
-python tools/generate_audio.py            # crée assets/audio/letters/*.mp3
-python tools/generate_audio.py --list-voices   # autres voix arabes
+npm install
+npm run dev       # serveur de développement (http://localhost:5173)
+npm run build     # vérification TypeScript + build de production dans dist/
+npm run preview   # sert le build de production en local
 ```
 
-Sans audio, l'app fonctionne quand même : le bouton « Écouter » affiche
-simplement un message de repli.
+## 📦 Déploiement
 
-## État d'avancement
+Le build produit un site **100 % statique** (`dist/`) : il se déploie tel quel
+sur GitHub Pages, Netlify, Vercel, ou n'importe quel serveur web. Le routage
+utilise le hash (`/#/app`), donc **aucune configuration serveur** n'est requise.
 
-- [x] **Phase 0** — Fondations : structure, thème, support RTL, modèles de
-      données, chargement du contenu JSON, écran de parcours, moteur
-      d'exercices (QCM, écoute, association, reconstruction), XP/streak/cœurs.
-- [x] **Phase 1** — Alphabet complet (28 lettres + hamza) en 8 leçons +
-      pipeline audio (lecteur intégré + script de génération).
-- [x] **Contenu** — Module grammaire (7 leçons), module vocabulaire (4 leçons),
-      et tutoriels de prononciation (مخارج الحروف) avec schéma anatomique
-      interactif du point d'articulation. (21 leçons au total.)
-- [ ] **Phase 2** — Comptes, persistance locale, synchronisation, notifications.
-- [ ] **Phase 3** — Monétisation (abonnement + pubs).
-- [ ] **Phase 4** — Modules de grammaire/vocabulaire, polish, publication.
-
-## Structure
+## 🗂️ Structure
 
 ```
-lib/
-  app/         # thème, providers (Riverpod), widget racine
-  core/        # (à venir) utilitaires
-  data/
-    models/        # Module, Lesson, Exercise, UserProgress
-    repositories/  # chargement du contenu JSON
-  features/
-    onboarding/    # écran d'accueil
-    home/          # le parcours de leçons
-    lesson/        # moteur d'exercices
-  shared/widgets/  # composants réutilisables
-assets/content/    # leçons au format JSON (le contenu pédagogique)
+src/
+  data/content/    # tout le contenu pédagogique en JSON (leçons, exercices)
+  data/course.ts   # assemblage des niveaux CECRL et des mondes enfants
+  lib/             # modèles, synthèse vocale, progression (localStorage)
+  features/        # moteur d'exercices générique (adulte + enfants)
+  components/      # mascottes SVG, composants UI
+  pages/           # landing, parcours adulte, alphabet, profil, espace enfants
+docs/              # curriculum pédagogique et feuille de route
 ```
+
+Le contenu est **piloté par les données** : pour ajouter une leçon, il suffit
+d'éditer un JSON dans `src/data/content/` (aucun code à toucher).
+
+## 📚 Documentation
+
+- [`docs/CURRICULUM.md`](docs/CURRICULUM.md) — programme pédagogique complet.
+- [`docs/ROADMAP.md`](docs/ROADMAP.md) — feuille de route du produit.
+
+## 🕰️ Historique
+
+Ce dépôt hébergeait auparavant un prototype **Flutter** (mobile). Il a été
+refondu en application web (React + Vite + TypeScript + Tailwind CSS) ; le
+contenu pédagogique JSON d'origine a été intégralement conservé et étendu.
+L'ancien code reste disponible dans l'historique git (branche `main`,
+jusqu'au commit `b6d799f`).

@@ -1,0 +1,100 @@
+{
+  "module": {
+    "id": "mod_vocab2",
+    "title_fr": "Vocabulaire du quotidien",
+    "title_ar": "مُفرَدات يَوميّة",
+    "icon": "🗓️",
+    "lessons": []
+  },
+  "lessons": [
+    {
+      "id": "les_voc2_01",
+      "title_fr": "Les nombres de 1 à 10",
+      "xp": 10,
+      "exercises": [
+        { "type": "intro_word", "word": "واحِد", "prompt_fr": "واحِد (wāḥid) — « un » (1)." },
+        { "type": "intro_word", "word": "اِثنان", "prompt_fr": "اِثنان (ithnān) — « deux » (2)." },
+        { "type": "intro_word", "word": "ثَلاثة", "prompt_fr": "ثَلاثة (thalātha) — « trois » (3)." },
+        { "type": "intro_word", "word": "أَربَعة", "prompt_fr": "أَربَعة (arbaʿa) — « quatre » (4)." },
+        { "type": "intro_word", "word": "خَمسة", "prompt_fr": "خَمسة (khamsa) — « cinq » (5)." },
+        { "type": "translate_choose", "prompt_fr": "Que signifie « ثَلاثة » ?", "options": ["3", "1", "5", "2"], "answer": "3" },
+        { "type": "translate_choose", "prompt_fr": "Comment dit-on « quatre » ?", "options": ["أَربَعة", "خَمسة", "واحِد", "اِثنان"], "answer": "أَربَعة" },
+        { "type": "intro_word", "word": "سِتّة", "prompt_fr": "سِتّة (sitta) — « six » (6)." },
+        { "type": "intro_word", "word": "سَبعة", "prompt_fr": "سَبعة (sabʿa) — « sept » (7)." },
+        { "type": "intro_word", "word": "ثَمانِية", "prompt_fr": "ثَمانِية (thamāniya) — « huit » (8)." },
+        { "type": "intro_word", "word": "تِسعة", "prompt_fr": "تِسعة (tisʿa) — « neuf » (9)." },
+        { "type": "intro_word", "word": "عَشَرة", "prompt_fr": "عَشَرة (ʿashara) — « dix » (10)." },
+        { "type": "listen_choose", "prompt_fr": "Écoute et choisis le bon nombre.", "tts": "خَمسة", "options": ["خَمسة", "سَبعة", "تِسعة", "عَشَرة"], "answer": "خَمسة" },
+        { "type": "match", "prompt_fr": "Associe chaque nombre.", "pairs": [ { "left": "سِتّة", "right": "6" }, { "left": "ثَمانِية", "right": "8" }, { "left": "عَشَرة", "right": "10" }, { "left": "سَبعة", "right": "7" } ] }
+      ]
+    },
+    {
+      "id": "les_voc2_02",
+      "title_fr": "Les couleurs",
+      "xp": 10,
+      "exercises": [
+        { "type": "intro_word", "word": "أَحمَر", "emoji": "🔴", "prompt_fr": "أَحمَر (aḥmar) — « rouge »." },
+        { "type": "intro_word", "word": "أَزرَق", "emoji": "🔵", "prompt_fr": "أَزرَق (azraq) — « bleu »." },
+        { "type": "intro_word", "word": "أَخضَر", "emoji": "🟢", "prompt_fr": "أَخضَر (akhḍar) — « vert »." },
+        { "type": "intro_word", "word": "أَصفَر", "emoji": "🟡", "prompt_fr": "أَصفَر (aṣfar) — « jaune »." },
+        { "type": "intro_word", "word": "أَبيَض", "emoji": "⚪", "prompt_fr": "أَبيَض (abyaḍ) — « blanc »." },
+        { "type": "intro_word", "word": "أَسوَد", "emoji": "⚫", "prompt_fr": "أَسوَد (aswad) — « noir »." },
+        { "type": "translate_choose", "prompt_fr": "Que signifie « أَخضَر » ?", "options": ["Vert", "Rouge", "Bleu", "Noir"], "answer": "Vert" },
+        { "type": "translate_choose", "prompt_fr": "Comment dit-on « rouge » ?", "emoji": "🔴", "options": ["أَحمَر", "أَصفَر", "أَبيَض", "أَزرَق"], "answer": "أَحمَر" },
+        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne couleur.", "tts": "أَزرَق", "options": ["أَزرَق", "أَسوَد", "أَحمَر", "أَخضَر"], "answer": "أَزرَق" },
+        { "type": "match", "prompt_fr": "Associe chaque couleur.", "pairs": [ { "left": "أَصفَر", "right": "Jaune" }, { "left": "أَبيَض", "right": "Blanc" }, { "left": "أَسوَد", "right": "Noir" }, { "left": "أَخضَر", "right": "Vert" } ] }
+      ]
+    },
+    {
+      "id": "les_voc2_03",
+      "title_fr": "Manger et boire",
+      "xp": 10,
+      "exercises": [
+        { "type": "intro_word", "word": "ماء", "emoji": "💧", "prompt_fr": "ماء (mā’) — « eau »." },
+        { "type": "intro_word", "word": "خُبز", "emoji": "🍞", "prompt_fr": "خُبز (khubz) — « pain »." },
+        { "type": "intro_word", "word": "حَليب", "emoji": "🥛", "prompt_fr": "حَليب (ḥalīb) — « lait »." },
+        { "type": "intro_word", "word": "شاي", "emoji": "🍵", "prompt_fr": "شاي (shāy) — « thé »." },
+        { "type": "intro_word", "word": "قَهوة", "emoji": "☕", "prompt_fr": "قَهوة (qahwa) — « café »." },
+        { "type": "intro_word", "word": "تُفّاحة", "emoji": "🍎", "prompt_fr": "تُفّاحة (tuffāḥa) — « pomme »." },
+        { "type": "translate_choose", "prompt_fr": "Que signifie « خُبز » ?", "options": ["Pain", "Eau", "Lait", "Café"], "answer": "Pain" },
+        { "type": "listen_choose", "prompt_fr": "Écoute : quelle boisson entends-tu ?", "tts": "قَهوة", "options": ["قَهوة", "شاي", "ماء", "حَليب"], "answer": "قَهوة" },
+        { "type": "translate_choose", "prompt_fr": "Comment dit-on « eau » ?", "emoji": "💧", "options": ["ماء", "حَليب", "شاي", "خُبز"], "answer": "ماء" },
+        { "type": "match", "prompt_fr": "Associe chaque mot.", "pairs": [ { "left": "تُفّاحة", "right": "Pomme" }, { "left": "حَليب", "right": "Lait" }, { "left": "شاي", "right": "Thé" }, { "left": "خُبز", "right": "Pain" } ] }
+      ]
+    },
+    {
+      "id": "les_voc2_04",
+      "title_fr": "Phrases de survie",
+      "xp": 15,
+      "exercises": [
+        { "type": "intro_word", "word": "أَينَ...؟", "prompt_fr": "أَينَ (ayna) — « Où… ? ». Ex. : أَينَ الفُندُق؟ = Où est l'hôtel ?" },
+        { "type": "intro_word", "word": "كَم الثَّمَن؟", "prompt_fr": "كَم الثَّمَن؟ (kam ath-thaman) — « C'est combien ? »." },
+        { "type": "intro_word", "word": "لا أَفهَم", "prompt_fr": "لا أَفهَم (lā afham) — « Je ne comprends pas »." },
+        { "type": "intro_word", "word": "أُريدُ...", "prompt_fr": "أُريدُ (urīdu) — « Je veux… ». Ex. : أُريدُ ماء = Je veux de l'eau." },
+        { "type": "intro_word", "word": "مِن فَضلِك", "prompt_fr": "مِن فَضلِك (min faḍlik) — « S'il te plaît »." },
+        { "type": "translate_choose", "prompt_fr": "Que signifie « لا أَفهَم » ?", "options": ["Je ne comprends pas", "Je veux de l'eau", "C'est combien ?", "Où est l'hôtel ?"], "answer": "Je ne comprends pas" },
+        { "type": "translate_choose", "prompt_fr": "Comment demander le prix ?", "options": ["كَم الثَّمَن؟", "أَينَ الفُندُق؟", "مِن فَضلِك", "لا أَفهَم"], "answer": "كَم الثَّمَن؟" },
+        { "type": "build", "prompt_fr": "Construis : « Je veux de l'eau, s'il te plaît ».", "tokens": ["أُريدُ", "ماء", "مِن فَضلِك", "أَينَ"], "answer": ["أُريدُ", "ماء", "مِن فَضلِك"] },
+        { "type": "match", "prompt_fr": "Associe chaque phrase.", "pairs": [ { "left": "أَينَ...؟", "right": "Où… ?" }, { "left": "أُريدُ...", "right": "Je veux…" }, { "left": "مِن فَضلِك", "right": "S'il te plaît" } ] }
+      ]
+    },
+    {
+      "id": "les_voc2_05",
+      "title_fr": "Les pronoms personnels",
+      "xp": 15,
+      "concept_fr": "Avec les pronoms, tu peux déjà faire des phrases complètes : en arabe, « أنا طالِب » (je [suis] étudiant) n'a pas besoin du verbe « être » au présent.",
+      "exercises": [
+        { "type": "intro_word", "word": "أَنا", "prompt_fr": "أَنا (anā) — « je / moi »." },
+        { "type": "intro_word", "word": "أَنتَ", "prompt_fr": "أَنتَ (anta) — « tu » (à un homme)." },
+        { "type": "intro_word", "word": "أَنتِ", "prompt_fr": "أَنتِ (anti) — « tu » (à une femme)." },
+        { "type": "intro_word", "word": "هُوَ", "prompt_fr": "هُوَ (huwa) — « il »." },
+        { "type": "intro_word", "word": "هِيَ", "prompt_fr": "هِيَ (hiya) — « elle »." },
+        { "type": "intro_word", "word": "نَحنُ", "prompt_fr": "نَحنُ (naḥnu) — « nous »." },
+        { "type": "mcq", "prompt_fr": "Comment dit-on « tu » à une femme ?", "options": ["أَنتِ", "أَنتَ", "هِيَ", "أَنا"], "answer": "أَنتِ" },
+        { "type": "mcq", "prompt_fr": "« هُوَ طالِب » signifie…", "options": ["Il est étudiant", "Elle est étudiante", "Je suis étudiant", "Nous sommes étudiants"], "answer": "Il est étudiant" },
+        { "type": "build", "prompt_fr": "Construis : « Je suis étudiant ».", "tokens": ["أَنا", "طالِب", "هُوَ", "أَنتَ"], "answer": ["أَنا", "طالِب"] },
+        { "type": "match", "prompt_fr": "Associe chaque pronom.", "pairs": [ { "left": "أَنا", "right": "je" }, { "left": "هُوَ", "right": "il" }, { "left": "هِيَ", "right": "elle" }, { "left": "نَحنُ", "right": "nous" } ] }
+      ]
+    }
+  ]
+}
