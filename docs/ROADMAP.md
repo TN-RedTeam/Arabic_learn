@@ -32,7 +32,8 @@ initiation pour leurs enfants.
 - [x] 5 niveaux CECRL (A0 → B2+), ~40 leçons, déblocage séquentiel.
 - [x] Moteur d'exercices générique : découverte (lettre/mot/règle), QCM,
       traduction, écoute, association, construction de phrase, articulation.
-- [x] Audio via Web Speech API (voix arabe du navigateur, aucun fichier).
+- [x] Audio natif : MP3 pré-générés par voix neuronale arabe (edge-tts) pour
+      les 337 textes du contenu, avec repli Web Speech API.
 - [x] Alphabet interactif (28 lettres + hamza, 4 formes, audio).
 - [x] Progression locale : XP, streak, étoiles, badges, reset.
 - [x] Espace enfants : 4 mondes, 12 jeux, 4 mascottes SVG, étoiles.
@@ -43,7 +44,8 @@ initiation pour leurs enfants.
 
 - [ ] Relecture de tout le contenu par un(e) arabophone (voir 🟡 dans
       CURRICULUM.md).
-- [ ] Enregistrements audio natifs (remplacer/compléter la synthèse vocale).
+- [ ] Enregistrements par un(e) locuteur/trice natif(ve) en studio (remplacer
+      la voix de synthèse neuronale sur les leçons clés, ex. makharij).
 - [ ] Révision espacée (SRS) : re-proposer les mots déjà vus.
 - [ ] Leçons d'écriture : tracer les lettres (canvas).
 

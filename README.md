@@ -21,8 +21,10 @@ avec en plus un **espace enfants** ludique (mascottes cartoon, mondes colorés,
   (isolée / initiale / médiane / finale) et l'audio.
 - **Points d'articulation (مخارج الحروف)** : schéma anatomique animé pour
   placer les sons difficiles (ع، ح، خ، ق…).
-- **Audio sans fichiers** : prononciation via la synthèse vocale arabe du
-  navigateur (Web Speech API).
+- **Audio natif inclus** : chaque texte arabe est enregistré avec une voix
+  neuronale arabe (fichiers MP3 livrés avec l'app) — fonctionne sur tous les
+  appareils, même sans voix arabe installée. La synthèse vocale du navigateur
+  sert uniquement de repli.
 - Progression persistée en local : XP, série quotidienne 🔥, étoiles ⭐,
   badges, déblocage séquentiel des leçons.
 
@@ -43,6 +45,23 @@ npm run dev       # serveur de développement (http://localhost:5173)
 npm run build     # vérification TypeScript + build de production dans dist/
 npm run preview   # sert le build de production en local
 ```
+
+## 🔊 Régénérer l'audio
+
+Les MP3 (`public/audio/`) sont générés par une voix neuronale arabe via
+[edge-tts](https://github.com/rany2/edge-tts) (gratuit). Après avoir ajouté ou
+modifié du contenu dans `src/data/content/`, il suffit de relancer :
+
+```bash
+pip install edge-tts
+python tools/generate_audio.py            # génère les fichiers manquants
+python tools/generate_audio.py --force    # regénère tout
+python tools/generate_audio.py --list-voices  # autres voix arabes
+```
+
+Le script extrait automatiquement tous les textes arabes du contenu, produit
+un MP3 par texte et met à jour `src/data/audio_manifest.json`. Les lettres
+isolées sont prononcées par leur nom (« ب » → « باء »).
 
 ## 📦 Déploiement
 
