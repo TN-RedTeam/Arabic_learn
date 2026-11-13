@@ -91,7 +91,7 @@ export function Landing() {
               <li>🦁 5 mondes, 5 mascottes qui encouragent</li>
               <li>🫧 Bulles à éclater, memory, tracé au doigt</li>
               <li>🎨 Mots illustrés : animaux, couleurs, famille…</li>
-              <li>⭐ Étoiles et confettis à chaque victoire</li>
+              <li>📔 Un album d'autocollants surprise à compléter</li>
             </ul>
           </Link>
         </div>

@@ -8,6 +8,7 @@ import { AlphabetPage } from './pages/adult/AlphabetPage';
 import { ProfilePage } from './pages/adult/ProfilePage';
 import { KidsHome } from './pages/kids/KidsHome';
 import { KidsGame } from './pages/kids/KidsGame';
+import { KidsAlbum } from './pages/kids/KidsAlbum';
 
 // HashRouter : l'app fonctionne servie depuis n'importe quel hébergement
 // statique (GitHub Pages inclus) sans configuration de réécriture d'URL.
@@ -25,6 +26,7 @@ export function App() {
           </Route>
           <Route path="/app/lecon/:lessonId" element={<LessonPage />} />
           <Route path="/kids" element={<KidsHome />} />
+          <Route path="/kids/album" element={<KidsAlbum />} />
           <Route path="/kids/jeu/:gameId" element={<KidsGame />} />
           <Route path="*" element={<Landing />} />
         </Routes>

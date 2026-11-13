@@ -155,6 +155,15 @@ for (const name of readdirSync(CONTENT).filter((f) => f.endsWith('.json'))) {
   }
 }
 
+// Chaque jeu enfant doit avoir son autocollant (et chaque monde son doré).
+const stickersSrc = readFileSync(join(ROOT, 'src', 'data', 'stickers.ts'), 'utf8');
+const kidsData = JSON.parse(readFileSync(join(CONTENT, 'kids.json'), 'utf8'));
+for (const world of kidsData.worlds) {
+  if (!stickersSrc.includes(`${world.id}:`)) err('stickers.ts', null, `pas d'autocollant doré pour le monde « ${world.id} »`);
+  for (const game of world.games)
+    if (!stickersSrc.includes(`${game.id}:`)) err('stickers.ts', null, `pas d'autocollant pour le jeu « ${game.id} »`);
+}
+
 // Couverture audio : tout texte prononçable doit avoir un MP3 natif.
 let missingAudio = 0;
 for (const text of spokenTexts) {
