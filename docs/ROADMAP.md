@@ -36,7 +36,11 @@ initiation pour leurs enfants.
       les 337 textes du contenu, avec repli Web Speech API.
 - [x] Alphabet interactif (28 lettres + hamza, 4 formes, audio).
 - [x] Progression locale : XP, streak, étoiles, badges, reset.
-- [x] Espace enfants : 4 mondes, 12 jeux, 4 mascottes SVG, étoiles.
+- [x] Espace enfants : 5 mondes, 20 jeux, 5 mascottes SVG, étoiles,
+      mascotte-coach qui réagit pendant le jeu, confettis de fin.
+- [x] Vrais jeux : memory (paires émoji ↔ mot), bulles magiques (écoute et
+      éclate), tracé des lettres au doigt (canvas avec validation du geste)
+      — le tracé est aussi intégré au parcours adulte (module alphabet).
 
 ## 3. Prochaines étapes
 
@@ -47,7 +51,8 @@ initiation pour leurs enfants.
 - [ ] Enregistrements par un(e) locuteur/trice natif(ve) en studio (remplacer
       la voix de synthèse neuronale sur les leçons clés, ex. makharij).
 - [ ] Révision espacée (SRS) : re-proposer les mots déjà vus.
-- [ ] Leçons d'écriture : tracer les lettres (canvas).
+- [ ] Tracé : sens et ordre du geste (animation du tracé modèle, détection
+      de la direction), toutes les formes contextuelles.
 
 **V3 — Comptes & synchronisation**
 

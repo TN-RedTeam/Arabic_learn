@@ -112,6 +112,37 @@ export function FennecMascot({ className }: MascotProps) {
   );
 }
 
+export function ParrotMascot({ className }: MascotProps) {
+  return (
+    <svg viewBox="0 0 120 120" className={className} aria-hidden>
+      <ellipse cx="60" cy="110" rx="26" ry="6" fill="rgba(0,0,0,0.08)" />
+      {/* queue */}
+      <path d="M48 92 Q30 108 24 118 Q44 112 56 100 Z" fill="#ef4444" />
+      <path d="M54 94 Q44 108 42 116 Q56 108 62 100 Z" fill="#f59e0b" />
+      {/* corps */}
+      <ellipse cx="62" cy="72" rx="28" ry="34" fill="#ef4444" />
+      <ellipse cx="62" cy="82" rx="18" ry="20" fill="#fca5a5" />
+      {/* aile */}
+      <ellipse cx="80" cy="74" rx="11" ry="22" fill="#2563eb" transform="rotate(-14 80 74)" />
+      <ellipse cx="82" cy="70" rx="7" ry="14" fill="#60a5fa" transform="rotate(-14 82 70)" />
+      {/* tête */}
+      <circle cx="56" cy="38" r="24" fill="#ef4444" />
+      {/* œil */}
+      <circle cx="48" cy="34" r="9" fill="#fff" />
+      <circle cx="48" cy="34" r="4.5" fill="#1c2b33" />
+      <circle cx="49.6" cy="32.4" r="1.6" fill="#fff" />
+      {/* bec */}
+      <path d="M36 40 Q22 42 24 50 Q32 56 42 50 Z" fill="#f59e0b" />
+      <path d="M38 50 Q30 56 34 60 Q42 58 44 52 Z" fill="#d97706" />
+      {/* plume sur la tête */}
+      <path d="M60 16 Q58 4 50 2 Q56 12 54 18 Z" fill="#2563eb" />
+      <path d="M64 15 Q66 4 74 3 Q67 13 66 19 Z" fill="#22c55e" />
+      {/* pattes */}
+      <path d="M54 104 l-3 7 M54 104 l3 7 M70 102 l-3 7 M70 102 l3 7" stroke="#d97706" strokeWidth="3" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function Mascot({ name, className }: { name: string; className?: string }) {
   switch (name) {
     case 'cat':
@@ -120,6 +151,8 @@ export function Mascot({ name, className }: { name: string; className?: string }
       return <CamelMascot className={className} />;
     case 'owl':
       return <OwlMascot className={className} />;
+    case 'parrot':
+      return <ParrotMascot className={className} />;
     default:
       return <FennecMascot className={className} />;
   }

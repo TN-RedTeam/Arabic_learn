@@ -39,10 +39,15 @@ RATE = "-15%"  # légèrement ralenti pour l'apprentissage
 CONCURRENCY = 4
 
 ARABIC_RE = re.compile(r"[؀-ۿ]")
+LATIN_RE = re.compile(r"[A-Za-zÀ-ÿ]")
 
 
-def is_arabic(text: str) -> bool:
-    return bool(ARABIC_RE.search(text))
+def is_mostly_arabic(text: str) -> bool:
+    """Vrai pour un texte essentiellement arabe. Une phrase française qui cite
+    une lettre (« ت a 2 points… ») ne doit pas être prononcée par la voix arabe."""
+    arabic = len(ARABIC_RE.findall(text))
+    latin = len(LATIN_RE.findall(text))
+    return arabic > 0 and arabic >= latin
 
 
 def letter_names() -> dict[str, str]:
@@ -57,7 +62,7 @@ def collect_texts() -> dict[str, str]:
     spoken: dict[str, str] = {}
 
     def add(text: str | None):
-        if not text or not is_arabic(text):
+        if not text or not is_mostly_arabic(text):
             return
         text = text.strip()
         # Lettre isolée → on prononce son nom.
@@ -151,6 +156,10 @@ async def main():
 
     # Ne référencer que les fichiers réellement présents.
     manifest = {t: f for t, f in manifest.items() if (AUDIO_DIR / f).exists()}
+    # Supprimer les fichiers orphelins (contenu retiré ou filtré).
+    for orphan in set(f.name for f in AUDIO_DIR.glob("*.mp3")) - set(manifest.values()):
+        (AUDIO_DIR / orphan).unlink()
+        print(f"  orphelin supprimé : {orphan}")
     MANIFEST.write_text(
         json.dumps(manifest, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
         encoding="utf-8",

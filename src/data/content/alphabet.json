@@ -12,156 +12,1381 @@
       "les_alpha_05",
       "les_alpha_06",
       "les_alpha_07",
-      "les_alpha_08"
+      "les_alpha_08",
+      "les_alpha_09",
+      "les_alpha_10"
     ]
   },
   "letters": [
-    { "char": "ا", "name_ar": "أَلِف", "translit": "alif", "sound_fr": "« â » long", "audio": "audio/letters/alif.mp3", "connects_after": false, "forms": { "isolated": "ا", "initial": "ا", "medial": "ـا", "final": "ـا" } },
-    { "char": "ب", "name_ar": "باء", "translit": "bā’", "sound_fr": "« b »", "audio": "audio/letters/ba.mp3", "connects_after": true, "forms": { "isolated": "ب", "initial": "بـ", "medial": "ـبـ", "final": "ـب" } },
-    { "char": "ت", "name_ar": "تاء", "translit": "tā’", "sound_fr": "« t »", "audio": "audio/letters/ta.mp3", "connects_after": true, "forms": { "isolated": "ت", "initial": "تـ", "medial": "ـتـ", "final": "ـت" } },
-    { "char": "ث", "name_ar": "ثاء", "translit": "thā’", "sound_fr": "« th » anglais (think)", "audio": "audio/letters/tha.mp3", "connects_after": true, "forms": { "isolated": "ث", "initial": "ثـ", "medial": "ـثـ", "final": "ـث" } },
-    { "char": "ج", "name_ar": "جيم", "translit": "jīm", "sound_fr": "« dj » (comme Djamila)", "audio": "audio/letters/jim.mp3", "connects_after": true, "forms": { "isolated": "ج", "initial": "جـ", "medial": "ـجـ", "final": "ـج" } },
-    { "char": "ح", "name_ar": "حاء", "translit": "ḥā’", "sound_fr": "« h » très expiré, du fond de la gorge", "audio": "audio/letters/hha.mp3", "connects_after": true, "forms": { "isolated": "ح", "initial": "حـ", "medial": "ـحـ", "final": "ـح" } },
-    { "char": "خ", "name_ar": "خاء", "translit": "khā’", "sound_fr": "« j » espagnol / « ch » allemand (jota)", "audio": "audio/letters/kha.mp3", "connects_after": true, "forms": { "isolated": "خ", "initial": "خـ", "medial": "ـخـ", "final": "ـخ" } },
-    { "char": "د", "name_ar": "دال", "translit": "dāl", "sound_fr": "« d »", "audio": "audio/letters/dal.mp3", "connects_after": false, "forms": { "isolated": "د", "initial": "د", "medial": "ـد", "final": "ـد" } },
-    { "char": "ذ", "name_ar": "ذال", "translit": "dhāl", "sound_fr": "« th » anglais sonore (this)", "audio": "audio/letters/dhal.mp3", "connects_after": false, "forms": { "isolated": "ذ", "initial": "ذ", "medial": "ـذ", "final": "ـذ" } },
-    { "char": "ر", "name_ar": "راء", "translit": "rā’", "sound_fr": "« r » roulé", "audio": "audio/letters/ra.mp3", "connects_after": false, "forms": { "isolated": "ر", "initial": "ر", "medial": "ـر", "final": "ـر" } },
-    { "char": "ز", "name_ar": "زاي", "translit": "zāy", "sound_fr": "« z »", "audio": "audio/letters/zay.mp3", "connects_after": false, "forms": { "isolated": "ز", "initial": "ز", "medial": "ـز", "final": "ـز" } },
-    { "char": "س", "name_ar": "سين", "translit": "sīn", "sound_fr": "« s »", "audio": "audio/letters/sin.mp3", "connects_after": true, "forms": { "isolated": "س", "initial": "سـ", "medial": "ـسـ", "final": "ـس" } },
-    { "char": "ش", "name_ar": "شين", "translit": "shīn", "sound_fr": "« ch » (chat)", "audio": "audio/letters/shin.mp3", "connects_after": true, "forms": { "isolated": "ش", "initial": "شـ", "medial": "ـشـ", "final": "ـش" } },
-    { "char": "ص", "name_ar": "صاد", "translit": "ṣād", "sound_fr": "« s » emphatique (lourd)", "audio": "audio/letters/sad.mp3", "connects_after": true, "forms": { "isolated": "ص", "initial": "صـ", "medial": "ـصـ", "final": "ـص" } },
-    { "char": "ض", "name_ar": "ضاد", "translit": "ḍād", "sound_fr": "« d » emphatique (lourd)", "audio": "audio/letters/dad.mp3", "connects_after": true, "forms": { "isolated": "ض", "initial": "ضـ", "medial": "ـضـ", "final": "ـض" } },
-    { "char": "ط", "name_ar": "طاء", "translit": "ṭā’", "sound_fr": "« t » emphatique (lourd)", "audio": "audio/letters/tta.mp3", "connects_after": true, "forms": { "isolated": "ط", "initial": "طـ", "medial": "ـطـ", "final": "ـط" } },
-    { "char": "ظ", "name_ar": "ظاء", "translit": "ẓā’", "sound_fr": "« th » sonore emphatique", "audio": "audio/letters/dha.mp3", "connects_after": true, "forms": { "isolated": "ظ", "initial": "ظـ", "medial": "ـظـ", "final": "ـظ" } },
-    { "char": "ع", "name_ar": "عين", "translit": "ʿayn", "sound_fr": "son guttural sans équivalent en français", "audio": "audio/letters/ayn.mp3", "connects_after": true, "forms": { "isolated": "ع", "initial": "عـ", "medial": "ـعـ", "final": "ـع" } },
-    { "char": "غ", "name_ar": "غين", "translit": "ghayn", "sound_fr": "« r » grasseyé (proche du r français)", "audio": "audio/letters/ghayn.mp3", "connects_after": true, "forms": { "isolated": "غ", "initial": "غـ", "medial": "ـغـ", "final": "ـغ" } },
-    { "char": "ف", "name_ar": "فاء", "translit": "fā’", "sound_fr": "« f »", "audio": "audio/letters/fa.mp3", "connects_after": true, "forms": { "isolated": "ف", "initial": "فـ", "medial": "ـفـ", "final": "ـف" } },
-    { "char": "ق", "name_ar": "قاف", "translit": "qāf", "sound_fr": "« k » profond, du fond de la gorge", "audio": "audio/letters/qaf.mp3", "connects_after": true, "forms": { "isolated": "ق", "initial": "قـ", "medial": "ـقـ", "final": "ـق" } },
-    { "char": "ك", "name_ar": "كاف", "translit": "kāf", "sound_fr": "« k »", "audio": "audio/letters/kaf.mp3", "connects_after": true, "forms": { "isolated": "ك", "initial": "كـ", "medial": "ـكـ", "final": "ـك" } },
-    { "char": "ل", "name_ar": "لام", "translit": "lām", "sound_fr": "« l »", "audio": "audio/letters/lam.mp3", "connects_after": true, "forms": { "isolated": "ل", "initial": "لـ", "medial": "ـلـ", "final": "ـل" } },
-    { "char": "م", "name_ar": "ميم", "translit": "mīm", "sound_fr": "« m »", "audio": "audio/letters/mim.mp3", "connects_after": true, "forms": { "isolated": "م", "initial": "مـ", "medial": "ـمـ", "final": "ـم" } },
-    { "char": "ن", "name_ar": "نون", "translit": "nūn", "sound_fr": "« n »", "audio": "audio/letters/nun.mp3", "connects_after": true, "forms": { "isolated": "ن", "initial": "نـ", "medial": "ـنـ", "final": "ـن" } },
-    { "char": "ه", "name_ar": "هاء", "translit": "hā’", "sound_fr": "« h » aspiré (anglais house)", "audio": "audio/letters/ha.mp3", "connects_after": true, "forms": { "isolated": "ه", "initial": "هـ", "medial": "ـهـ", "final": "ـه" } },
-    { "char": "و", "name_ar": "واو", "translit": "wāw", "sound_fr": "« w » / « ou » long", "audio": "audio/letters/waw.mp3", "connects_after": false, "forms": { "isolated": "و", "initial": "و", "medial": "ـو", "final": "ـو" } },
-    { "char": "ي", "name_ar": "ياء", "translit": "yā’", "sound_fr": "« y » / « i » long", "audio": "audio/letters/ya.mp3", "connects_after": true, "forms": { "isolated": "ي", "initial": "يـ", "medial": "ـيـ", "final": "ـي" } },
-    { "char": "ء", "name_ar": "هَمزة", "translit": "hamza", "sound_fr": "coup de glotte (attaque vocalique)", "audio": "audio/letters/hamza.mp3", "connects_after": false, "forms": { "isolated": "ء", "initial": "ء", "medial": "ء", "final": "ء" } }
+    {
+      "char": "ا",
+      "name_ar": "أَلِف",
+      "translit": "alif",
+      "sound_fr": "« â » long",
+      "audio": "audio/letters/alif.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "ا",
+        "initial": "ا",
+        "medial": "ـا",
+        "final": "ـا"
+      }
+    },
+    {
+      "char": "ب",
+      "name_ar": "باء",
+      "translit": "bā’",
+      "sound_fr": "« b »",
+      "audio": "audio/letters/ba.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ب",
+        "initial": "بـ",
+        "medial": "ـبـ",
+        "final": "ـب"
+      }
+    },
+    {
+      "char": "ت",
+      "name_ar": "تاء",
+      "translit": "tā’",
+      "sound_fr": "« t »",
+      "audio": "audio/letters/ta.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ت",
+        "initial": "تـ",
+        "medial": "ـتـ",
+        "final": "ـت"
+      }
+    },
+    {
+      "char": "ث",
+      "name_ar": "ثاء",
+      "translit": "thā’",
+      "sound_fr": "« th » anglais (think)",
+      "audio": "audio/letters/tha.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ث",
+        "initial": "ثـ",
+        "medial": "ـثـ",
+        "final": "ـث"
+      }
+    },
+    {
+      "char": "ج",
+      "name_ar": "جيم",
+      "translit": "jīm",
+      "sound_fr": "« dj » (comme Djamila)",
+      "audio": "audio/letters/jim.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ج",
+        "initial": "جـ",
+        "medial": "ـجـ",
+        "final": "ـج"
+      }
+    },
+    {
+      "char": "ح",
+      "name_ar": "حاء",
+      "translit": "ḥā’",
+      "sound_fr": "« h » très expiré, du fond de la gorge",
+      "audio": "audio/letters/hha.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ح",
+        "initial": "حـ",
+        "medial": "ـحـ",
+        "final": "ـح"
+      }
+    },
+    {
+      "char": "خ",
+      "name_ar": "خاء",
+      "translit": "khā’",
+      "sound_fr": "« j » espagnol / « ch » allemand (jota)",
+      "audio": "audio/letters/kha.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "خ",
+        "initial": "خـ",
+        "medial": "ـخـ",
+        "final": "ـخ"
+      }
+    },
+    {
+      "char": "د",
+      "name_ar": "دال",
+      "translit": "dāl",
+      "sound_fr": "« d »",
+      "audio": "audio/letters/dal.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "د",
+        "initial": "د",
+        "medial": "ـد",
+        "final": "ـد"
+      }
+    },
+    {
+      "char": "ذ",
+      "name_ar": "ذال",
+      "translit": "dhāl",
+      "sound_fr": "« th » anglais sonore (this)",
+      "audio": "audio/letters/dhal.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "ذ",
+        "initial": "ذ",
+        "medial": "ـذ",
+        "final": "ـذ"
+      }
+    },
+    {
+      "char": "ر",
+      "name_ar": "راء",
+      "translit": "rā’",
+      "sound_fr": "« r » roulé",
+      "audio": "audio/letters/ra.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "ر",
+        "initial": "ر",
+        "medial": "ـر",
+        "final": "ـر"
+      }
+    },
+    {
+      "char": "ز",
+      "name_ar": "زاي",
+      "translit": "zāy",
+      "sound_fr": "« z »",
+      "audio": "audio/letters/zay.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "ز",
+        "initial": "ز",
+        "medial": "ـز",
+        "final": "ـز"
+      }
+    },
+    {
+      "char": "س",
+      "name_ar": "سين",
+      "translit": "sīn",
+      "sound_fr": "« s »",
+      "audio": "audio/letters/sin.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "س",
+        "initial": "سـ",
+        "medial": "ـسـ",
+        "final": "ـس"
+      }
+    },
+    {
+      "char": "ش",
+      "name_ar": "شين",
+      "translit": "shīn",
+      "sound_fr": "« ch » (chat)",
+      "audio": "audio/letters/shin.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ش",
+        "initial": "شـ",
+        "medial": "ـشـ",
+        "final": "ـش"
+      }
+    },
+    {
+      "char": "ص",
+      "name_ar": "صاد",
+      "translit": "ṣād",
+      "sound_fr": "« s » emphatique (lourd)",
+      "audio": "audio/letters/sad.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ص",
+        "initial": "صـ",
+        "medial": "ـصـ",
+        "final": "ـص"
+      }
+    },
+    {
+      "char": "ض",
+      "name_ar": "ضاد",
+      "translit": "ḍād",
+      "sound_fr": "« d » emphatique (lourd)",
+      "audio": "audio/letters/dad.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ض",
+        "initial": "ضـ",
+        "medial": "ـضـ",
+        "final": "ـض"
+      }
+    },
+    {
+      "char": "ط",
+      "name_ar": "طاء",
+      "translit": "ṭā’",
+      "sound_fr": "« t » emphatique (lourd)",
+      "audio": "audio/letters/tta.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ط",
+        "initial": "طـ",
+        "medial": "ـطـ",
+        "final": "ـط"
+      }
+    },
+    {
+      "char": "ظ",
+      "name_ar": "ظاء",
+      "translit": "ẓā’",
+      "sound_fr": "« th » sonore emphatique",
+      "audio": "audio/letters/dha.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ظ",
+        "initial": "ظـ",
+        "medial": "ـظـ",
+        "final": "ـظ"
+      }
+    },
+    {
+      "char": "ع",
+      "name_ar": "عين",
+      "translit": "ʿayn",
+      "sound_fr": "son guttural sans équivalent en français",
+      "audio": "audio/letters/ayn.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ع",
+        "initial": "عـ",
+        "medial": "ـعـ",
+        "final": "ـع"
+      }
+    },
+    {
+      "char": "غ",
+      "name_ar": "غين",
+      "translit": "ghayn",
+      "sound_fr": "« r » grasseyé (proche du r français)",
+      "audio": "audio/letters/ghayn.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "غ",
+        "initial": "غـ",
+        "medial": "ـغـ",
+        "final": "ـغ"
+      }
+    },
+    {
+      "char": "ف",
+      "name_ar": "فاء",
+      "translit": "fā’",
+      "sound_fr": "« f »",
+      "audio": "audio/letters/fa.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ف",
+        "initial": "فـ",
+        "medial": "ـفـ",
+        "final": "ـف"
+      }
+    },
+    {
+      "char": "ق",
+      "name_ar": "قاف",
+      "translit": "qāf",
+      "sound_fr": "« k » profond, du fond de la gorge",
+      "audio": "audio/letters/qaf.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ق",
+        "initial": "قـ",
+        "medial": "ـقـ",
+        "final": "ـق"
+      }
+    },
+    {
+      "char": "ك",
+      "name_ar": "كاف",
+      "translit": "kāf",
+      "sound_fr": "« k »",
+      "audio": "audio/letters/kaf.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ك",
+        "initial": "كـ",
+        "medial": "ـكـ",
+        "final": "ـك"
+      }
+    },
+    {
+      "char": "ل",
+      "name_ar": "لام",
+      "translit": "lām",
+      "sound_fr": "« l »",
+      "audio": "audio/letters/lam.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ل",
+        "initial": "لـ",
+        "medial": "ـلـ",
+        "final": "ـل"
+      }
+    },
+    {
+      "char": "م",
+      "name_ar": "ميم",
+      "translit": "mīm",
+      "sound_fr": "« m »",
+      "audio": "audio/letters/mim.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "م",
+        "initial": "مـ",
+        "medial": "ـمـ",
+        "final": "ـم"
+      }
+    },
+    {
+      "char": "ن",
+      "name_ar": "نون",
+      "translit": "nūn",
+      "sound_fr": "« n »",
+      "audio": "audio/letters/nun.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ن",
+        "initial": "نـ",
+        "medial": "ـنـ",
+        "final": "ـن"
+      }
+    },
+    {
+      "char": "ه",
+      "name_ar": "هاء",
+      "translit": "hā’",
+      "sound_fr": "« h » aspiré (anglais house)",
+      "audio": "audio/letters/ha.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ه",
+        "initial": "هـ",
+        "medial": "ـهـ",
+        "final": "ـه"
+      }
+    },
+    {
+      "char": "و",
+      "name_ar": "واو",
+      "translit": "wāw",
+      "sound_fr": "« w » / « ou » long",
+      "audio": "audio/letters/waw.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "و",
+        "initial": "و",
+        "medial": "ـو",
+        "final": "ـو"
+      }
+    },
+    {
+      "char": "ي",
+      "name_ar": "ياء",
+      "translit": "yā’",
+      "sound_fr": "« y » / « i » long",
+      "audio": "audio/letters/ya.mp3",
+      "connects_after": true,
+      "forms": {
+        "isolated": "ي",
+        "initial": "يـ",
+        "medial": "ـيـ",
+        "final": "ـي"
+      }
+    },
+    {
+      "char": "ء",
+      "name_ar": "هَمزة",
+      "translit": "hamza",
+      "sound_fr": "coup de glotte (attaque vocalique)",
+      "audio": "audio/letters/hamza.mp3",
+      "connects_after": false,
+      "forms": {
+        "isolated": "ء",
+        "initial": "ء",
+        "medial": "ء",
+        "final": "ء"
+      }
+    }
   ],
   "lessons": [
     {
       "id": "les_alpha_01",
       "title_fr": "Lettres : ا ب ت ث",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "ا", "prompt_fr": "أَلِف (alif) — une voyelle longue « â ». Elle ne s'attache jamais à la lettre suivante." },
-        { "type": "intro_letter", "letter": "ب", "prompt_fr": "باء (bā’) — fait le son « b ». Un point en dessous." },
-        { "type": "intro_letter", "letter": "ت", "prompt_fr": "تاء (tā’) — fait le son « t ». Deux points au-dessus." },
-        { "type": "intro_letter", "letter": "ث", "prompt_fr": "ثاء (thā’) — le « th » anglais de « think ». Trois points au-dessus." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/ta.mp3", "options": ["ب", "ت", "ث", "ا"], "answer": "ت" },
-        { "type": "mcq", "prompt_fr": "Quelle lettre fait le son « b » ?", "options": ["ا", "ب", "ت", "ث"], "answer": "ب" },
-        { "type": "mcq", "prompt_fr": "Comment distinguer ت de ث ?", "options": ["ت a 2 points, ث en a 3", "ت a 3 points, ث en a 2", "ت a 1 point, ث en a 2", "Ils sont identiques"], "answer": "ت a 2 points, ث en a 3" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "ا", "right": "alif" }, { "left": "ب", "right": "bā’" }, { "left": "ت", "right": "tā’" }, { "left": "ث", "right": "thā’" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "ا",
+          "prompt_fr": "أَلِف (alif) — une voyelle longue « â ». Elle ne s'attache jamais à la lettre suivante."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ب",
+          "prompt_fr": "باء (bā’) — fait le son « b ». Un point en dessous."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ت",
+          "prompt_fr": "تاء (tā’) — fait le son « t ». Deux points au-dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ث",
+          "prompt_fr": "ثاء (thā’) — le « th » anglais de « think ». Trois points au-dessus."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/ta.mp3",
+          "options": [
+            "ب",
+            "ت",
+            "ث",
+            "ا"
+          ],
+          "answer": "ت"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Quelle lettre fait le son « b » ?",
+          "options": [
+            "ا",
+            "ب",
+            "ت",
+            "ث"
+          ],
+          "answer": "ب"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Comment distinguer ت de ث ?",
+          "options": [
+            "ت a 2 points, ث en a 3",
+            "ت a 3 points, ث en a 2",
+            "ت a 1 point, ث en a 2",
+            "Ils sont identiques"
+          ],
+          "answer": "ت a 2 points, ث en a 3"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "ا",
+              "right": "alif"
+            },
+            {
+              "left": "ب",
+              "right": "bā’"
+            },
+            {
+              "left": "ت",
+              "right": "tā’"
+            },
+            {
+              "left": "ث",
+              "right": "thā’"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "ا",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ب",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ت",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ث",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_02",
       "title_fr": "Lettres : ج ح خ",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "ج", "prompt_fr": "جيم (jīm) — son « dj » (comme dans Djamila). Un point dessous." },
-        { "type": "intro_letter", "letter": "ح", "prompt_fr": "حاء (ḥā’) — un « h » très expiré, du fond de la gorge. Sans point." },
-        { "type": "intro_letter", "letter": "خ", "prompt_fr": "خاء (khā’) — la « jota » espagnole / « ch » allemand. Un point dessus." },
-        { "type": "mcq", "prompt_fr": "Ces trois lettres ont la même forme. Laquelle fait le son « dj » ?", "options": ["ج", "ح", "خ"], "answer": "ج" },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/kha.mp3", "options": ["ج", "ح", "خ", "ه"], "answer": "خ" },
-        { "type": "mcq", "prompt_fr": "Laquelle n'a aucun point ?", "options": ["ج", "ح", "خ"], "answer": "ح" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "ج", "right": "jīm" }, { "left": "ح", "right": "ḥā’" }, { "left": "خ", "right": "khā’" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "ج",
+          "prompt_fr": "جيم (jīm) — son « dj » (comme dans Djamila). Un point dessous."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ح",
+          "prompt_fr": "حاء (ḥā’) — un « h » très expiré, du fond de la gorge. Sans point."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "خ",
+          "prompt_fr": "خاء (khā’) — la « jota » espagnole / « ch » allemand. Un point dessus."
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Ces trois lettres ont la même forme. Laquelle fait le son « dj » ?",
+          "options": [
+            "ج",
+            "ح",
+            "خ"
+          ],
+          "answer": "ج"
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/kha.mp3",
+          "options": [
+            "ج",
+            "ح",
+            "خ",
+            "ه"
+          ],
+          "answer": "خ"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Laquelle n'a aucun point ?",
+          "options": [
+            "ج",
+            "ح",
+            "خ"
+          ],
+          "answer": "ح"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "ج",
+              "right": "jīm"
+            },
+            {
+              "left": "ح",
+              "right": "ḥā’"
+            },
+            {
+              "left": "خ",
+              "right": "khā’"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "ج",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ح",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "خ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_03",
       "title_fr": "Lettres : د ذ ر ز",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "د", "prompt_fr": "دال (dāl) — son « d ». Ne s'attache pas à la lettre suivante." },
-        { "type": "intro_letter", "letter": "ذ", "prompt_fr": "ذال (dhāl) — le « th » sonore de l'anglais « this ». Un point dessus." },
-        { "type": "intro_letter", "letter": "ر", "prompt_fr": "راء (rā’) — un « r » roulé. Ne s'attache pas à la suivante." },
-        { "type": "intro_letter", "letter": "ز", "prompt_fr": "زاي (zāy) — son « z ». Un point dessus." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/ra.mp3", "options": ["د", "ذ", "ر", "ز"], "answer": "ر" },
-        { "type": "mcq", "prompt_fr": "Laquelle fait le son « z » ?", "options": ["د", "ذ", "ر", "ز"], "answer": "ز" },
-        { "type": "mcq", "prompt_fr": "Ces 4 lettres ont un point commun. Lequel ?", "options": ["Elles ne s'attachent pas à la lettre suivante", "Elles ont toutes deux points", "Elles font toutes le son « d »", "Elles s'écrivent en haut"], "answer": "Elles ne s'attachent pas à la lettre suivante" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "د", "right": "dāl" }, { "left": "ذ", "right": "dhāl" }, { "left": "ر", "right": "rā’" }, { "left": "ز", "right": "zāy" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "د",
+          "prompt_fr": "دال (dāl) — son « d ». Ne s'attache pas à la lettre suivante."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ذ",
+          "prompt_fr": "ذال (dhāl) — le « th » sonore de l'anglais « this ». Un point dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ر",
+          "prompt_fr": "راء (rā’) — un « r » roulé. Ne s'attache pas à la suivante."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ز",
+          "prompt_fr": "زاي (zāy) — son « z ». Un point dessus."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/ra.mp3",
+          "options": [
+            "د",
+            "ذ",
+            "ر",
+            "ز"
+          ],
+          "answer": "ر"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Laquelle fait le son « z » ?",
+          "options": [
+            "د",
+            "ذ",
+            "ر",
+            "ز"
+          ],
+          "answer": "ز"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Ces 4 lettres ont un point commun. Lequel ?",
+          "options": [
+            "Elles ne s'attachent pas à la lettre suivante",
+            "Elles ont toutes deux points",
+            "Elles font toutes le son « d »",
+            "Elles s'écrivent en haut"
+          ],
+          "answer": "Elles ne s'attachent pas à la lettre suivante"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "د",
+              "right": "dāl"
+            },
+            {
+              "left": "ذ",
+              "right": "dhāl"
+            },
+            {
+              "left": "ر",
+              "right": "rā’"
+            },
+            {
+              "left": "ز",
+              "right": "zāy"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "د",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ذ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ر",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ز",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_04",
       "title_fr": "Lettres : س ش ص ض",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "س", "prompt_fr": "سين (sīn) — son « s ». Trois « dents », sans point." },
-        { "type": "intro_letter", "letter": "ش", "prompt_fr": "شين (shīn) — son « ch » (chat). Trois « dents » + trois points." },
-        { "type": "intro_letter", "letter": "ص", "prompt_fr": "صاد (ṣād) — un « s » emphatique (lourd, prononcé en arrondissant la bouche)." },
-        { "type": "intro_letter", "letter": "ض", "prompt_fr": "ضاد (ḍād) — un « d » emphatique. La lettre emblématique de l'arabe (« langue du ḍād »)." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/shin.mp3", "options": ["س", "ش", "ص", "ض"], "answer": "ش" },
-        { "type": "mcq", "prompt_fr": "Quelle est la différence entre س et ش ?", "options": ["ش a trois points au-dessus", "ش a un point en dessous", "ش est plus petit", "Aucune différence"], "answer": "ش a trois points au-dessus" },
-        { "type": "mcq", "prompt_fr": "Laquelle est un « s » emphatique (lourd) ?", "options": ["س", "ش", "ص", "ض"], "answer": "ص" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "س", "right": "sīn" }, { "left": "ش", "right": "shīn" }, { "left": "ص", "right": "ṣād" }, { "left": "ض", "right": "ḍād" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "س",
+          "prompt_fr": "سين (sīn) — son « s ». Trois « dents », sans point."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ش",
+          "prompt_fr": "شين (shīn) — son « ch » (chat). Trois « dents » + trois points."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ص",
+          "prompt_fr": "صاد (ṣād) — un « s » emphatique (lourd, prononcé en arrondissant la bouche)."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ض",
+          "prompt_fr": "ضاد (ḍād) — un « d » emphatique. La lettre emblématique de l'arabe (« langue du ḍād »)."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/shin.mp3",
+          "options": [
+            "س",
+            "ش",
+            "ص",
+            "ض"
+          ],
+          "answer": "ش"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Quelle est la différence entre س et ش ?",
+          "options": [
+            "ش a trois points au-dessus",
+            "ش a un point en dessous",
+            "ش est plus petit",
+            "Aucune différence"
+          ],
+          "answer": "ش a trois points au-dessus"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Laquelle est un « s » emphatique (lourd) ?",
+          "options": [
+            "س",
+            "ش",
+            "ص",
+            "ض"
+          ],
+          "answer": "ص"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "س",
+              "right": "sīn"
+            },
+            {
+              "left": "ش",
+              "right": "shīn"
+            },
+            {
+              "left": "ص",
+              "right": "ṣād"
+            },
+            {
+              "left": "ض",
+              "right": "ḍād"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "س",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ش",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ص",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ض",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_05",
       "title_fr": "Lettres : ط ظ ع غ",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "ط", "prompt_fr": "طاء (ṭā’) — un « t » emphatique (lourd)." },
-        { "type": "intro_letter", "letter": "ظ", "prompt_fr": "ظاء (ẓā’) — un « th » sonore emphatique. Comme ط mais avec un point dessus." },
-        { "type": "intro_letter", "letter": "ع", "prompt_fr": "عين (ʿayn) — un son guttural sans équivalent français, contracté dans la gorge." },
-        { "type": "intro_letter", "letter": "غ", "prompt_fr": "غين (ghayn) — proche du « r » grasseyé français. Comme ع avec un point dessus." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/ayn.mp3", "options": ["ط", "ظ", "ع", "غ"], "answer": "ع" },
-        { "type": "mcq", "prompt_fr": "ع et غ ont la même forme. Comment reconnaître غ ?", "options": ["Elle a un point au-dessus", "Elle a un point en dessous", "Elle est plus grande", "Elle a deux points"], "answer": "Elle a un point au-dessus" },
-        { "type": "mcq", "prompt_fr": "Laquelle est un « t » emphatique ?", "options": ["ط", "ظ", "ع", "غ"], "answer": "ط" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "ط", "right": "ṭā’" }, { "left": "ظ", "right": "ẓā’" }, { "left": "ع", "right": "ʿayn" }, { "left": "غ", "right": "ghayn" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "ط",
+          "prompt_fr": "طاء (ṭā’) — un « t » emphatique (lourd)."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ظ",
+          "prompt_fr": "ظاء (ẓā’) — un « th » sonore emphatique. Comme ط mais avec un point dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ع",
+          "prompt_fr": "عين (ʿayn) — un son guttural sans équivalent français, contracté dans la gorge."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "غ",
+          "prompt_fr": "غين (ghayn) — proche du « r » grasseyé français. Comme ع avec un point dessus."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/ayn.mp3",
+          "options": [
+            "ط",
+            "ظ",
+            "ع",
+            "غ"
+          ],
+          "answer": "ع"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "ع et غ ont la même forme. Comment reconnaître غ ?",
+          "options": [
+            "Elle a un point au-dessus",
+            "Elle a un point en dessous",
+            "Elle est plus grande",
+            "Elle a deux points"
+          ],
+          "answer": "Elle a un point au-dessus"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Laquelle est un « t » emphatique ?",
+          "options": [
+            "ط",
+            "ظ",
+            "ع",
+            "غ"
+          ],
+          "answer": "ط"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "ط",
+              "right": "ṭā’"
+            },
+            {
+              "left": "ظ",
+              "right": "ẓā’"
+            },
+            {
+              "left": "ع",
+              "right": "ʿayn"
+            },
+            {
+              "left": "غ",
+              "right": "ghayn"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "ط",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ظ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ع",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "غ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_06",
       "title_fr": "Lettres : ف ق ك ل",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "ف", "prompt_fr": "فاء (fā’) — son « f ». Un point dessus." },
-        { "type": "intro_letter", "letter": "ق", "prompt_fr": "قاف (qāf) — un « k » profond, prononcé tout au fond de la gorge. Deux points dessus." },
-        { "type": "intro_letter", "letter": "ك", "prompt_fr": "كاف (kāf) — son « k » normal." },
-        { "type": "intro_letter", "letter": "ل", "prompt_fr": "لام (lām) — son « l »." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/qaf.mp3", "options": ["ف", "ق", "ك", "ل"], "answer": "ق" },
-        { "type": "mcq", "prompt_fr": "Quelle est la différence de son entre ك et ق ?", "options": ["ق est un « k » profond (gorge), ك un « k » normal", "ق est un « g », ك un « k »", "Aucune différence", "ك est emphatique"], "answer": "ق est un « k » profond (gorge), ك un « k » normal" },
-        { "type": "mcq", "prompt_fr": "ف a un point, ق en a deux. Laquelle fait le son « f » ?", "options": ["ف", "ق"], "answer": "ف" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "ف", "right": "fā’" }, { "left": "ق", "right": "qāf" }, { "left": "ك", "right": "kāf" }, { "left": "ل", "right": "lām" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "ف",
+          "prompt_fr": "فاء (fā’) — son « f ». Un point dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ق",
+          "prompt_fr": "قاف (qāf) — un « k » profond, prononcé tout au fond de la gorge. Deux points dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ك",
+          "prompt_fr": "كاف (kāf) — son « k » normal."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ل",
+          "prompt_fr": "لام (lām) — son « l »."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/qaf.mp3",
+          "options": [
+            "ف",
+            "ق",
+            "ك",
+            "ل"
+          ],
+          "answer": "ق"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Quelle est la différence de son entre ك et ق ?",
+          "options": [
+            "ق est un « k » profond (gorge), ك un « k » normal",
+            "ق est un « g », ك un « k »",
+            "Aucune différence",
+            "ك est emphatique"
+          ],
+          "answer": "ق est un « k » profond (gorge), ك un « k » normal"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "ف a un point, ق en a deux. Laquelle fait le son « f » ?",
+          "options": [
+            "ف",
+            "ق"
+          ],
+          "answer": "ف"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "ف",
+              "right": "fā’"
+            },
+            {
+              "left": "ق",
+              "right": "qāf"
+            },
+            {
+              "left": "ك",
+              "right": "kāf"
+            },
+            {
+              "left": "ل",
+              "right": "lām"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "ف",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ق",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ك",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ل",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_07",
       "title_fr": "Lettres : م ن ه",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
-        { "type": "intro_letter", "letter": "م", "prompt_fr": "ميم (mīm) — son « m ». Une boucle avec une queue." },
-        { "type": "intro_letter", "letter": "ن", "prompt_fr": "نون (nūn) — son « n ». Un point au-dessus." },
-        { "type": "intro_letter", "letter": "ه", "prompt_fr": "هاء (hā’) — un « h » léger et aspiré (comme l'anglais « house »)." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/mim.mp3", "options": ["م", "ن", "ه", "و"], "answer": "م" },
-        { "type": "mcq", "prompt_fr": "Attention à ne pas confondre ح (gorge) et ه (léger). Laquelle est le « h » léger ?", "options": ["ح", "ه"], "answer": "ه" },
-        { "type": "mcq", "prompt_fr": "Laquelle fait le son « n » ?", "options": ["م", "ن", "ه"], "answer": "ن" },
-        { "type": "match", "prompt_fr": "Associe chaque lettre à son nom.", "pairs": [ { "left": "م", "right": "mīm" }, { "left": "ن", "right": "nūn" }, { "left": "ه", "right": "hā’" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "م",
+          "prompt_fr": "ميم (mīm) — son « m ». Une boucle avec une queue."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ن",
+          "prompt_fr": "نون (nūn) — son « n ». Un point au-dessus."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ه",
+          "prompt_fr": "هاء (hā’) — un « h » léger et aspiré (comme l'anglais « house »)."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/mim.mp3",
+          "options": [
+            "م",
+            "ن",
+            "ه",
+            "و"
+          ],
+          "answer": "م"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Attention à ne pas confondre ح (gorge) et ه (léger). Laquelle est le « h » léger ?",
+          "options": [
+            "ح",
+            "ه"
+          ],
+          "answer": "ه"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Laquelle fait le son « n » ?",
+          "options": [
+            "م",
+            "ن",
+            "ه"
+          ],
+          "answer": "ن"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "م",
+              "right": "mīm"
+            },
+            {
+              "left": "ن",
+              "right": "nūn"
+            },
+            {
+              "left": "ه",
+              "right": "hā’"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "م",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ن",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ه",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
       ]
     },
     {
       "id": "les_alpha_08",
       "title_fr": "Lettres : و ي ء + révision",
-      "xp": 15,
+      "xp": 20,
       "exercises": [
-        { "type": "intro_letter", "letter": "و", "prompt_fr": "واو (wāw) — son « w », ou la voyelle longue « ou ». Ne s'attache pas à la suivante." },
-        { "type": "intro_letter", "letter": "ي", "prompt_fr": "ياء (yā’) — son « y », ou la voyelle longue « î ». Deux points en dessous." },
-        { "type": "intro_letter", "letter": "ء", "prompt_fr": "هَمزة (hamza) — un coup de glotte (l'attaque brusque du son, comme entre les deux « a » de « na-ap »)." },
-        { "type": "listen_choose", "prompt_fr": "Écoute et choisis la bonne lettre.", "audio": "audio/letters/ya.mp3", "options": ["و", "ي", "ء", "ن"], "answer": "ي" },
-        { "type": "mcq", "prompt_fr": "Quelle lettre peut servir de voyelle longue « ou » ?", "options": ["و", "ي", "ء"], "answer": "و" },
-        { "type": "mcq", "prompt_fr": "Combien y a-t-il de lettres dans l'alphabet arabe ?", "options": ["26", "28", "30", "22"], "answer": "28" },
-        { "type": "match", "prompt_fr": "Révision : associe chaque lettre à son nom.", "pairs": [ { "left": "و", "right": "wāw" }, { "left": "ي", "right": "yā’" }, { "left": "ء", "right": "hamza" }, { "left": "ق", "right": "qāf" } ] }
+        {
+          "type": "intro_letter",
+          "letter": "و",
+          "prompt_fr": "واو (wāw) — son « w », ou la voyelle longue « ou ». Ne s'attache pas à la suivante."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ي",
+          "prompt_fr": "ياء (yā’) — son « y », ou la voyelle longue « î ». Deux points en dessous."
+        },
+        {
+          "type": "intro_letter",
+          "letter": "ء",
+          "prompt_fr": "هَمزة (hamza) — un coup de glotte (l'attaque brusque du son, comme entre les deux « a » de « na-ap »)."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne lettre.",
+          "audio": "audio/letters/ya.mp3",
+          "options": [
+            "و",
+            "ي",
+            "ء",
+            "ن"
+          ],
+          "answer": "ي"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Quelle lettre peut servir de voyelle longue « ou » ?",
+          "options": [
+            "و",
+            "ي",
+            "ء"
+          ],
+          "answer": "و"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Combien y a-t-il de lettres dans l'alphabet arabe ?",
+          "options": [
+            "26",
+            "28",
+            "30",
+            "22"
+          ],
+          "answer": "28"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Révision : associe chaque lettre à son nom.",
+          "pairs": [
+            {
+              "left": "و",
+              "right": "wāw"
+            },
+            {
+              "left": "ي",
+              "right": "yā’"
+            },
+            {
+              "left": "ء",
+              "right": "hamza"
+            },
+            {
+              "left": "ق",
+              "right": "qāf"
+            }
+          ]
+        },
+        {
+          "type": "trace",
+          "letter": "و",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ي",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ء",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        }
+      ]
+    },
+    {
+      "id": "les_alpha_09",
+      "title_fr": "Les voyelles courtes (حَرَكات)",
+      "xp": 15,
+      "concept_fr": "L'arabe n'écrit pas les voyelles courtes avec des lettres : ce sont de petits signes au-dessus ou en dessous de la consonne. Sans elles, impossible de lire un mot nouveau !",
+      "exercises": [
+        {
+          "type": "intro_rule",
+          "ar": "بَ بِ بُ",
+          "prompt_fr": "فَتحة (fatḥa) ـَ : un trait AU-DESSUS → son « a ».\nكَسرة (kasra) ـِ : un trait EN DESSOUS → son « i ».\nضَمّة (ḍamma) ـُ : une petite boucle au-dessus → son « ou »."
+        },
+        {
+          "type": "intro_word",
+          "word": "بَ",
+          "prompt_fr": "بَ = ب + fatḥa → « ba »."
+        },
+        {
+          "type": "intro_word",
+          "word": "بِ",
+          "prompt_fr": "بِ = ب + kasra → « bi »."
+        },
+        {
+          "type": "intro_word",
+          "word": "بُ",
+          "prompt_fr": "بُ = ب + ḍamma → « bou »."
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute et choisis la bonne syllabe.",
+          "tts": "بُ",
+          "options": [
+            "بَ",
+            "بِ",
+            "بُ"
+          ],
+          "answer": "بُ"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Dans قَلَم (qalam, « crayon »), quelle voyelle porte la première lettre ?",
+          "ar": "قَلَم",
+          "options": [
+            "fatḥa (a)",
+            "kasra (i)",
+            "ḍamma (ou)"
+          ],
+          "answer": "fatḥa (a)"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "كِتاب (kitāb, « livre ») commence par « ki ». Quel signe est sous le ك ?",
+          "ar": "كِتاب",
+          "options": [
+            "kasra ـِ",
+            "fatḥa ـَ",
+            "ḍamma ـُ"
+          ],
+          "answer": "kasra ـِ"
+        },
+        {
+          "type": "intro_rule",
+          "ar": "با بو بي",
+          "prompt_fr": "Pour les voyelles LONGUES, on ajoute une lettre :\nا après fatḥa → « â » : با (bâ)\nو après ḍamma → « oû » : بو (boû)\nي après kasra → « î » : بي (bî)\nEx. : باب (bâb, porte), نُور (noûr, lumière), عِيد (ʿîd, fête)."
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Dans نُور (noûr), quelle lettre allonge le son « ou » ?",
+          "ar": "نُور",
+          "options": [
+            "و",
+            "ا",
+            "ي"
+          ],
+          "answer": "و"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque syllabe à sa lecture.",
+          "pairs": [
+            {
+              "left": "بَ",
+              "right": "ba"
+            },
+            {
+              "left": "بِ",
+              "right": "bi"
+            },
+            {
+              "left": "بُ",
+              "right": "bou"
+            },
+            {
+              "left": "با",
+              "right": "bâ (long)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "les_alpha_10",
+      "title_fr": "Soukoun, chadda et tanwine",
+      "xp": 15,
+      "concept_fr": "Trois derniers signes et tu sais tout lire : le soukoun (pas de voyelle), la chadda (consonne doublée) et le tanwine (terminaison an/in/oun).",
+      "exercises": [
+        {
+          "type": "intro_rule",
+          "ar": "مَكْتَب — مُعَلِّم — شُكرًا",
+          "prompt_fr": "سُكون (soukoun) ـْ : AUCUNE voyelle → مَكْتَب se lit mak-tab.\nشَدّة (chadda) ـّ : consonne DOUBLÉE → مُعَلِّم se lit mou-ʿal-lim.\nتَنوين (tanwine) ـً ـٍ ـٌ : terminaison « an / in / oun » → شُكرًا (choukran)."
+        },
+        {
+          "type": "intro_word",
+          "word": "مَكْتَب",
+          "prompt_fr": "مَكْتَب (maktab) — « bureau ». Le ك porte un soukoun : on enchaîne mak-tab, sans voyelle entre les deux."
+        },
+        {
+          "type": "intro_word",
+          "word": "مُعَلِّم",
+          "prompt_fr": "مُعَلِّم (muʿallim) — « enseignant ». Le ل porte une chadda : la consonne est doublée."
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Que fait la chadda ( ّ ) sur une lettre ?",
+          "options": [
+            "Elle double la consonne",
+            "Elle supprime la voyelle",
+            "Elle allonge la voyelle",
+            "Elle marque le féminin"
+          ],
+          "answer": "Elle double la consonne"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Dans مَكْتَب, pourquoi lit-on « mak-tab » d'un bloc ?",
+          "ar": "مَكْتَب",
+          "options": [
+            "Le ك porte un soukoun (aucune voyelle)",
+            "Le ك porte une fatḥa",
+            "Le م est doublé",
+            "C'est un mot étranger"
+          ],
+          "answer": "Le ك porte un soukoun (aucune voyelle)"
+        },
+        {
+          "type": "mcq",
+          "prompt_fr": "Quel mot se termine par un tanwine ?",
+          "options": [
+            "شُكرًا",
+            "كِتاب",
+            "بَيت",
+            "مَكْتَب"
+          ],
+          "answer": "شُكرًا"
+        },
+        {
+          "type": "listen_choose",
+          "prompt_fr": "Écoute : quel mot entends-tu ?",
+          "tts": "مُعَلِّم",
+          "options": [
+            "مُعَلِّم",
+            "مَكْتَب",
+            "كِتاب"
+          ],
+          "answer": "مُعَلِّم"
+        },
+        {
+          "type": "match",
+          "prompt_fr": "Associe chaque mot au signe qu'il illustre.",
+          "pairs": [
+            {
+              "left": "مَكْتَب",
+              "right": "soukoun (pas de voyelle)"
+            },
+            {
+              "left": "مُعَلِّم",
+              "right": "chadda (doublée)"
+            },
+            {
+              "left": "شُكرًا",
+              "right": "tanwine (-an)"
+            }
+          ]
+        }
       ]
     }
   ]

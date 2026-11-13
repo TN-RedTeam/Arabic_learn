@@ -9,6 +9,7 @@ export const worldColors: Record<string, { main: string; soft: string }> = {
   purple: { main: '#8b5cf6', soft: '#ede9fe' },
   sky: { main: '#0ea5e9', soft: '#e0f2fe' },
   green: { main: '#22c55e', soft: '#dcfce7' },
+  pink: { main: '#ec4899', soft: '#fce7f3' },
 };
 
 export function KidsHome() {
