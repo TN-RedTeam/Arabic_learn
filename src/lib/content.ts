@@ -8,7 +8,10 @@ export type Exercise =
   | ArticulationEx
   | ChoiceEx
   | MatchEx
-  | BuildEx;
+  | BuildEx
+  | TraceEx
+  | MemoryEx
+  | BubbleEx;
 
 export interface IntroLetterEx {
   type: 'intro_letter';
@@ -69,6 +72,29 @@ export interface BuildEx {
   answer: string[];
 }
 
+/** Tracer une lettre au doigt sur un gabarit. */
+export interface TraceEx {
+  type: 'trace';
+  letter: string;
+  prompt_fr?: string;
+}
+
+/** Jeu de memory : retrouver les paires (émoji ↔ mot arabe). */
+export interface MemoryEx {
+  type: 'memory';
+  prompt_fr: string;
+  pairs: { left: string; right: string }[];
+}
+
+/** On entend un son, on éclate la bonne bulle. */
+export interface BubbleEx {
+  type: 'bubble';
+  prompt_fr: string;
+  tts: string;
+  options: string[];
+  answer: string;
+}
+
 export interface Lesson {
   id: string;
   title_fr: string;
@@ -116,7 +142,7 @@ export interface KidsWorld {
   title_fr: string;
   emoji: string;
   color: string;
-  mascot: 'cat' | 'camel' | 'owl' | 'fennec';
+  mascot: 'cat' | 'camel' | 'owl' | 'fennec' | 'parrot';
   games: KidsGame[];
 }
 

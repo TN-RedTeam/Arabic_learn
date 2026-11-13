@@ -30,6 +30,9 @@ const ALLOWED_KEYS = {
   listen_choose: ['type', 'prompt_fr', 'options', 'answer', 'ar', 'tts', 'audio', 'emoji', 'options_ar'],
   match: ['type', 'prompt_fr', 'pairs'],
   build: ['type', 'prompt_fr', 'tokens', 'answer'],
+  trace: ['type', 'letter', 'prompt_fr'],
+  memory: ['type', 'prompt_fr', 'pairs'],
+  bubble: ['type', 'prompt_fr', 'tts', 'options', 'answer'],
 };
 
 const manifest = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'audio_manifest.json'), 'utf8'));
@@ -57,6 +60,25 @@ function checkExercise(file, lessonId, ex, i) {
       err(file, where, `listen_choose sans texte arabe à prononcer (tts/answer : « ${spoken} »)`);
     if (spoken && isMostlyArabic(spoken)) spokenTexts.add(spoken.trim());
     if (ex.ar) spokenTexts.add(ex.ar.trim());
+  }
+  if (ex.type === 'trace') {
+    if (!ex.letter) err(file, where, 'lettre à tracer manquante');
+    else spokenTexts.add(ex.letter.trim());
+  }
+  if (ex.type === 'bubble') {
+    if (!Array.isArray(ex.options) || ex.options.length < 2) err(file, where, 'moins de 2 bulles');
+    else if (!ex.options.includes(ex.answer)) err(file, where, `réponse « ${ex.answer} » absente des bulles`);
+    if (!isMostlyArabic(ex.tts ?? '')) err(file, where, 'bubble sans texte arabe à prononcer (tts)');
+    else spokenTexts.add(ex.tts.trim());
+    for (const o of ex.options ?? []) if (isMostlyArabic(o)) spokenTexts.add(o.trim());
+  }
+  if (ex.type === 'memory' || ex.type === 'match') {
+    if (!Array.isArray(ex.pairs) || ex.pairs.length < 2) err(file, where, 'moins de 2 paires');
+    else if (ex.type === 'memory') {
+      const faces = ex.pairs.flatMap((p) => [p.left, p.right]);
+      if (new Set(faces).size !== faces.length) err(file, where, 'cartes en double');
+      for (const f of faces) if (isMostlyArabic(f)) spokenTexts.add(f.trim());
+    }
   }
   if (ex.type === 'match') {
     if (!Array.isArray(ex.pairs) || ex.pairs.length < 2) err(file, where, 'moins de 2 paires');

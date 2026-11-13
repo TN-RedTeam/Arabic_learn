@@ -72,7 +72,8 @@ export function Landing() {
               <li>📈 5 niveaux, du grand débutant (A0) à l'avancé (B2+)</li>
               <li>🔤 Alphabet complet + points d'articulation (مخارج)</li>
               <li>📚 Grammaire progressive : du nom à la voix passive</li>
-              <li>🔊 Prononciation audio de chaque mot</li>
+              <li>✍️ Écriture : tracé des lettres guidé au doigt</li>
+              <li>🔊 Voix arabe native sur chaque mot</li>
               <li>🔥 XP, séries quotidiennes et étoiles</li>
             </ul>
           </Link>
@@ -87,10 +88,10 @@ export function Landing() {
             <p className="text-sm font-extrabold tracking-widest text-orange-800 uppercase">Enfants 4–10 ans</p>
             <h3 className="mt-2 text-2xl font-black text-orange-950">L'aventure ludique</h3>
             <ul className="mt-5 max-w-[70%] space-y-2 font-semibold text-orange-950/80">
-              <li>🦁 4 mondes à explorer avec des mascottes</li>
+              <li>🦁 5 mondes, 5 mascottes qui encouragent</li>
+              <li>🫧 Bulles à éclater, memory, tracé au doigt</li>
               <li>🎨 Mots illustrés : animaux, couleurs, famille…</li>
-              <li>🔊 On écoute, on touche, on répète</li>
-              <li>⭐ Des étoiles à collectionner</li>
+              <li>⭐ Étoiles et confettis à chaque victoire</li>
             </ul>
           </Link>
         </div>

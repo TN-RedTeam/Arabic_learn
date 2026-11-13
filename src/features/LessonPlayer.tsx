@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import type {
   ArticulationEx,
+  BubbleEx,
   BuildEx,
   ChoiceEx,
   Exercise,
@@ -9,9 +10,12 @@ import type {
   IntroRuleEx,
   IntroWordEx,
   MatchEx,
+  MemoryEx,
+  TraceEx,
 } from '../lib/content';
 import { speakArabic } from '../lib/tts';
 import { Bi, isArabic, isMostlyArabic, ProgressBar, SpeakerButton, Stars } from '../components/ui';
+import { Mascot } from '../components/Mascots';
 
 export type Variant = 'adult' | 'kids';
 
@@ -23,7 +27,13 @@ interface LessonPlayerProps {
   accent: string;
   exitTo: string;
   onFinish: (stars: 1 | 2 | 3) => void;
+  /** Mascotte-coach affichée en mode enfants. */
+  mascot?: string;
 }
+
+const COACH_PRAISE = ['Bravo ! 🎉', 'Super ! ⭐', 'Génial ! 🚀', 'Continue comme ça ! 💪', 'Trop fort ! 🌟'];
+const COACH_CHEER = ['Essaie encore, tu y es presque !', 'Pas grave, on réessaie ! 💪', 'Courage, tu vas trouver !'];
+const pickRandom = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -34,10 +44,11 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, onFinish }: LessonPlayerProps) {
+export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, onFinish, mascot }: LessonPlayerProps) {
   const [idx, setIdx] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [done, setDone] = useState(false);
+  const [coach, setCoach] = useState('هَيّا — c’est parti !');
 
   const stars: 1 | 2 | 3 = mistakes === 0 ? 3 : mistakes <= 2 ? 2 : 1;
 
@@ -48,16 +59,24 @@ export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, on
 
   const next = () => {
     if (idx + 1 >= exercises.length) setDone(true);
-    else setIdx(idx + 1);
+    else {
+      setIdx(idx + 1);
+      setCoach(pickRandom(COACH_PRAISE));
+    }
   };
-  const addMistake = () => setMistakes((m) => m + 1);
+  const addMistake = () => {
+    setMistakes((m) => m + 1);
+    setCoach(pickRandom(COACH_CHEER));
+  };
 
   const kids = variant === 'kids';
 
   if (done) {
     return (
       <div className="flex min-h-dvh flex-col items-center justify-center gap-6 p-6 text-center animate-pop">
-        <div className={kids ? 'text-8xl animate-float' : 'text-7xl'}>{stars === 3 ? '🏆' : '🎉'}</div>
+        {kids && <Confetti />}
+        {kids && mascot && <Mascot name={mascot} className="h-28 w-28 animate-float" />}
+        <div className={kids ? 'text-6xl' : 'text-7xl'}>{stars === 3 ? '🏆' : '🎉'}</div>
         <h2 className={`font-black ${kids ? 'text-4xl' : 'text-3xl'}`}>
           {kids ? 'Bravo, champion·ne !' : 'Leçon terminée !'}
         </h2>
@@ -94,6 +113,14 @@ export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, on
         </span>
       </header>
       <p className={`mt-3 text-center font-bold text-ink/40 ${kids ? 'text-base' : 'text-sm'}`}>{title}</p>
+      {kids && mascot && (
+        <div className="mt-2 flex items-center justify-center gap-2">
+          <Mascot name={mascot} className="h-12 w-12 shrink-0" />
+          <span className="rounded-2xl rounded-bl-sm bg-white px-3 py-1.5 text-sm font-extrabold text-ink/70 shadow animate-pop" key={coach}>
+            {coach}
+          </span>
+        </div>
+      )}
 
       <main className="flex flex-1 flex-col justify-center py-6" key={idx}>
         <ExerciseView exercise={exercise} kids={kids} accent={accent} onNext={next} onMistake={addMistake} />
@@ -126,7 +153,40 @@ function ExerciseView({ exercise, kids, accent, onNext, onMistake }: ExerciseVie
       return <MatchView ex={exercise} kids={kids} accent={accent} onNext={onNext} onMistake={onMistake} />;
     case 'build':
       return <BuildView ex={exercise} kids={kids} accent={accent} onNext={onNext} onMistake={onMistake} />;
+    case 'trace':
+      return <TraceView ex={exercise} kids={kids} accent={accent} onNext={onNext} onMistake={onMistake} />;
+    case 'memory':
+      return <MemoryView ex={exercise} kids={kids} accent={accent} onNext={onNext} />;
+    case 'bubble':
+      return <BubbleView ex={exercise} kids={kids} onNext={onNext} onMistake={onMistake} />;
   }
+}
+
+/** Pluie de confettis émoji (écran de fin, mode enfants). */
+function Confetti() {
+  const pieces = useMemo(
+    () =>
+      Array.from({ length: 18 }, (_, i) => ({
+        left: Math.random() * 100,
+        delay: Math.random() * 0.9,
+        duration: 2.2 + Math.random() * 1.6,
+        emoji: ['🎉', '⭐', '🎈', '✨', '🌟', '🎊'][i % 6],
+      })),
+    [],
+  );
+  return (
+    <>
+      {pieces.map((p, i) => (
+        <span
+          key={i}
+          className="confetti text-3xl"
+          style={{ left: `${p.left}%`, animationDuration: `${p.duration}s`, animationDelay: `${p.delay}s` }}
+        >
+          {p.emoji}
+        </span>
+      ))}
+    </>
+  );
 }
 
 function ContinueButton({ accent, onClick, label = 'Continuer' }: { accent: string; onClick: () => void; label?: string }) {
@@ -569,6 +629,394 @@ function BuildView({
         </div>
       )}
       {checked === true && <ContinueButton accent={accent} onClick={onNext} />}
+    </div>
+  );
+}
+
+/* ---------- Tracé de lettre (écriture au doigt) ---------- */
+
+const TRACE_SIZE = 300;
+
+function TraceView({
+  ex,
+  kids,
+  accent,
+  onNext,
+  onMistake,
+}: {
+  ex: TraceEx;
+  kids: boolean;
+  accent: string;
+  onNext: () => void;
+  onMistake: () => void;
+}) {
+  const guideRef = useRef<HTMLCanvasElement>(null);
+  const drawRef = useRef<HTMLCanvasElement>(null);
+  const glyphMask = useRef<Uint8ClampedArray | null>(null);
+  const toleranceMask = useRef<Uint8ClampedArray | null>(null);
+  const dprRef = useRef(1);
+  const drawing = useRef(false);
+  const [tries, setTries] = useState(0);
+  const [result, setResult] = useState<null | 'ok' | 'retry'>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        await document.fonts.load('230px "Noto Naskh Arabic"', ex.letter);
+      } catch {
+        /* la police système fera l'affaire */
+      }
+      if (cancelled || !guideRef.current || !drawRef.current) return;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      dprRef.current = dpr;
+      for (const canvas of [guideRef.current, drawRef.current]) {
+        canvas.width = TRACE_SIZE * dpr;
+        canvas.height = TRACE_SIZE * dpr;
+      }
+      // Gabarit gris de la lettre.
+      const g = guideRef.current.getContext('2d')!;
+      g.setTransform(dpr, 0, 0, dpr, 0, 0);
+      g.clearRect(0, 0, TRACE_SIZE, TRACE_SIZE);
+      g.font = '230px "Noto Naskh Arabic", serif';
+      g.textAlign = 'center';
+      g.textBaseline = 'middle';
+      g.fillStyle = '#d6d3d1';
+      g.fillText(ex.letter, TRACE_SIZE / 2, TRACE_SIZE / 2 - 12);
+      glyphMask.current = g.getImageData(0, 0, guideRef.current.width, guideRef.current.height).data;
+      // Masque de tolérance : la lettre « épaissie » (un enfant ne trace pas au pixel près).
+      const off = document.createElement('canvas');
+      off.width = guideRef.current.width;
+      off.height = guideRef.current.height;
+      const o = off.getContext('2d')!;
+      o.setTransform(dpr, 0, 0, dpr, 0, 0);
+      o.font = '230px "Noto Naskh Arabic", serif';
+      o.textAlign = 'center';
+      o.textBaseline = 'middle';
+      o.fillStyle = '#000';
+      for (let dx = -12; dx <= 12; dx += 6)
+        for (let dy = -12; dy <= 12; dy += 6) o.fillText(ex.letter, TRACE_SIZE / 2 + dx, TRACE_SIZE / 2 - 12 + dy);
+      toleranceMask.current = o.getImageData(0, 0, off.width, off.height).data;
+      // Contexte de dessin de l'utilisateur.
+      const d = drawRef.current.getContext('2d')!;
+      d.setTransform(dpr, 0, 0, dpr, 0, 0);
+      d.lineWidth = 16;
+      d.lineCap = 'round';
+      d.lineJoin = 'round';
+      d.strokeStyle = accent;
+      speakArabic(ex.letter);
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ex]);
+
+  const toLocal = (e: React.PointerEvent) => {
+    const rect = drawRef.current!.getBoundingClientRect();
+    return {
+      x: ((e.clientX - rect.left) * TRACE_SIZE) / rect.width,
+      y: ((e.clientY - rect.top) * TRACE_SIZE) / rect.height,
+    };
+  };
+
+  const startStroke = (e: React.PointerEvent) => {
+    if (result === 'ok') return;
+    drawing.current = true;
+    drawRef.current!.setPointerCapture?.(e.pointerId);
+    const ctx = drawRef.current!.getContext('2d')!;
+    const p = toLocal(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    ctx.lineTo(p.x + 0.1, p.y + 0.1);
+    ctx.stroke();
+  };
+  const moveStroke = (e: React.PointerEvent) => {
+    if (!drawing.current || result === 'ok') return;
+    const ctx = drawRef.current!.getContext('2d')!;
+    const p = toLocal(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+  };
+  const endStroke = () => {
+    drawing.current = false;
+  };
+
+  const clear = () => {
+    const ctx = drawRef.current!.getContext('2d')!;
+    ctx.save();
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, drawRef.current!.width, drawRef.current!.height);
+    ctx.restore();
+    setResult(null);
+  };
+
+  const check = () => {
+    if (!glyphMask.current || !toleranceMask.current) return;
+    const user = drawRef.current!
+      .getContext('2d')!
+      .getImageData(0, 0, drawRef.current!.width, drawRef.current!.height).data;
+    let glyph = 0;
+    let covered = 0;
+    let userPx = 0;
+    let inside = 0;
+    for (let i = 3; i < user.length; i += 4) {
+      const onGlyph = glyphMask.current[i] > 16;
+      const onUser = user[i] > 16;
+      if (onGlyph) {
+        glyph++;
+        if (onUser) covered++;
+      }
+      if (onUser) {
+        userPx++;
+        if (toleranceMask.current[i] > 16) inside++;
+      }
+    }
+    const ok = userPx > 0 && glyph > 0 && covered / glyph >= 0.45 && inside / userPx >= 0.55;
+    if (ok) {
+      setResult('ok');
+      speakArabic(ex.letter);
+    } else {
+      if (tries === 0) onMistake();
+      setTries((t) => t + 1);
+      setResult('retry');
+    }
+  };
+
+  return (
+    <div className="animate-slide-up text-center">
+      <h3 className={`font-extrabold ${kids ? 'text-2xl' : 'text-xl'}`}>
+        {ex.prompt_fr ?? '✍️ Trace la lettre avec ton doigt !'}
+      </h3>
+      <div className="mt-2 flex items-center justify-center gap-3">
+        <span className="font-arabic text-3xl" style={{ color: accent }}>
+          {ex.letter}
+        </span>
+        <SpeakerButton text={ex.letter} />
+      </div>
+      <div
+        className="relative mx-auto mt-4 rounded-3xl border-4 border-dashed bg-white shadow-inner"
+        style={{ width: TRACE_SIZE, height: TRACE_SIZE, maxWidth: '100%', borderColor: `${accent}55` }}
+      >
+        <canvas ref={guideRef} className="absolute inset-0 h-full w-full rounded-3xl" />
+        <canvas
+          ref={drawRef}
+          className="absolute inset-0 h-full w-full rounded-3xl"
+          style={{ touchAction: 'none' }}
+          onPointerDown={startStroke}
+          onPointerMove={moveStroke}
+          onPointerUp={endStroke}
+          onPointerLeave={endStroke}
+        />
+      </div>
+
+      {result === 'ok' ? (
+        <>
+          <div className="mx-auto mt-4 max-w-sm rounded-2xl bg-green-100 p-3 text-center font-bold text-green-800 animate-pop">
+            {kids ? '🌟 Magnifique tracé !' : '✅ Bien tracé !'}
+          </div>
+          <ContinueButton accent={accent} onClick={onNext} />
+        </>
+      ) : (
+        <>
+          {result === 'retry' && (
+            <div className="mx-auto mt-4 max-w-sm rounded-2xl bg-amber-100 p-3 text-center font-bold text-amber-800 animate-pop">
+              {kids ? '💪 Presque ! Repasse bien sur la lettre grise.' : 'Repasse plus précisément sur le gabarit gris.'}
+            </div>
+          )}
+          <div className="mx-auto mt-4 flex max-w-sm gap-3">
+            <button
+              type="button"
+              onClick={clear}
+              className="flex-1 rounded-2xl border-2 border-black/10 bg-white py-3 font-extrabold text-ink/70 transition hover:border-black/25"
+            >
+              🧽 Effacer
+            </button>
+            <button
+              type="button"
+              onClick={check}
+              className="flex-1 rounded-2xl py-3 font-extrabold text-white shadow-lg transition hover:brightness-110 active:scale-[0.98]"
+              style={{ backgroundColor: accent }}
+            >
+              Vérifier
+            </button>
+          </div>
+          {tries >= 2 && (
+            <button type="button" onClick={onNext} className="mt-3 font-bold text-ink/50 underline">
+              Continuer quand même
+            </button>
+          )}
+        </>
+      )}
+    </div>
+  );
+}
+
+/* ---------- Memory (retrouver les paires) ---------- */
+
+function MemoryView({
+  ex,
+  kids,
+  accent,
+  onNext,
+}: {
+  ex: MemoryEx;
+  kids: boolean;
+  accent: string;
+  onNext: () => void;
+}) {
+  const cards = useMemo(
+    () =>
+      shuffle(
+        ex.pairs.flatMap((p, i) => [
+          { id: `l${i}`, face: p.left, pair: i },
+          { id: `r${i}`, face: p.right, pair: i },
+        ]),
+      ),
+    [ex],
+  );
+  const [open, setOpen] = useState<string[]>([]);
+  const [matched, setMatched] = useState<Set<number>>(new Set());
+  const [locked, setLocked] = useState(false);
+
+  const complete = matched.size === ex.pairs.length;
+
+  const flip = (card: { id: string; face: string; pair: number }) => {
+    if (locked || complete || matched.has(card.pair) || open.includes(card.id)) return;
+    if (isMostlyArabic(card.face)) speakArabic(card.face);
+    const next = [...open, card.id];
+    setOpen(next);
+    if (next.length < 2) return;
+    setLocked(true);
+    const [a, b] = next.map((id) => cards.find((c) => c.id === id)!);
+    if (a.pair === b.pair) {
+      setTimeout(() => {
+        setMatched((prev) => new Set(prev).add(a.pair));
+        setOpen([]);
+        setLocked(false);
+      }, 500);
+    } else {
+      setTimeout(() => {
+        setOpen([]);
+        setLocked(false);
+      }, 950);
+    }
+  };
+
+  return (
+    <div className="animate-slide-up">
+      <h3 className={`text-center font-extrabold ${kids ? 'text-2xl' : 'text-xl'}`}>{ex.prompt_fr}</h3>
+      <div className={`mx-auto mt-6 grid max-w-md gap-3 ${cards.length <= 6 ? 'grid-cols-3' : 'grid-cols-4'}`}>
+        {cards.map((card) => {
+          const faceUp = open.includes(card.id) || matched.has(card.pair);
+          return (
+            <button
+              key={card.id}
+              type="button"
+              onClick={() => flip(card)}
+              className={`flex aspect-square items-center justify-center rounded-2xl border-b-4 font-black shadow transition active:scale-95 ${
+                matched.has(card.pair) ? 'opacity-70' : ''
+              }`}
+              style={
+                faceUp
+                  ? { backgroundColor: 'white', borderColor: matched.has(card.pair) ? '#22c55e' : accent }
+                  : { backgroundColor: accent, borderColor: 'rgba(0,0,0,0.25)' }
+              }
+            >
+              {faceUp ? (
+                <Bi
+                  text={card.face}
+                  className={`animate-pop ${isArabic(card.face) ? 'text-2xl' : 'text-4xl'}`}
+                />
+              ) : (
+                <span className="text-3xl text-white/90">؟</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+      {complete && (
+        <div className="mt-6 rounded-2xl bg-green-100 p-4 text-center font-bold text-green-800 animate-pop">
+          {kids ? '🌟 Toutes les paires trouvées, bravo !' : '✅ Toutes les paires sont retrouvées !'}
+        </div>
+      )}
+      {complete && <ContinueButton accent={accent} onClick={onNext} />}
+    </div>
+  );
+}
+
+/* ---------- Bulles magiques (écoute et éclate la bonne bulle) ---------- */
+
+const BUBBLE_COLORS = ['#f97316', '#8b5cf6', '#0ea5e9', '#22c55e', '#ec4899', '#eab308'];
+
+function BubbleView({
+  ex,
+  kids,
+  onNext,
+  onMistake,
+}: {
+  ex: BubbleEx;
+  kids: boolean;
+  onNext: () => void;
+  onMistake: () => void;
+}) {
+  const bubbles = useMemo(() => shuffle(ex.options), [ex]);
+  const [popped, setPopped] = useState(false);
+  const [wrong, setWrong] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    speakArabic(ex.tts);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const pick = (opt: string) => {
+    if (popped) return;
+    if (opt === ex.answer) {
+      setPopped(true);
+      setTimeout(onNext, 1100);
+    } else if (!wrong.has(opt)) {
+      onMistake();
+      setWrong((prev) => new Set(prev).add(opt));
+    }
+  };
+
+  return (
+    <div className="animate-slide-up text-center">
+      <h3 className={`font-extrabold ${kids ? 'text-2xl' : 'text-xl'}`}>{ex.prompt_fr}</h3>
+      <div className="mt-5 flex justify-center">
+        <SpeakerButton text={ex.tts} big label="Réécouter" />
+      </div>
+      <div className="mx-auto mt-8 flex max-w-md flex-wrap items-center justify-center gap-5">
+        {bubbles.map((opt, i) => {
+          const isAnswer = opt === ex.answer;
+          const missed = wrong.has(opt);
+          return (
+            <button
+              key={opt}
+              type="button"
+              onClick={() => pick(opt)}
+              disabled={missed}
+              className={`bubble-float flex items-center justify-center rounded-full font-black text-white shadow-lg transition ${
+                popped && isAnswer ? 'bubble-popped' : ''
+              } ${missed ? 'opacity-30' : 'hover:scale-110 active:scale-95'}`}
+              style={{
+                width: kids ? 96 : 80,
+                height: kids ? 96 : 80,
+                background: `radial-gradient(circle at 30% 30%, #ffffff66, transparent 40%), ${BUBBLE_COLORS[i % BUBBLE_COLORS.length]}`,
+                animationDelay: `${(i * 0.45) % 2}s`,
+                animationDuration: `${2.6 + (i % 3) * 0.5}s`,
+              }}
+            >
+              <Bi text={opt} className={isArabic(opt) ? 'text-4xl' : 'text-3xl'} />
+            </button>
+          );
+        })}
+      </div>
+      {popped && (
+        <div className="mt-6 inline-block rounded-2xl bg-green-100 px-6 py-3 font-bold text-green-800 animate-pop">
+          {kids ? '🎉 POP ! Bien joué !' : '✅ Correct !'}
+        </div>
+      )}
     </div>
   );
 }

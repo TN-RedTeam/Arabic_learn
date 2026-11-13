@@ -30,10 +30,18 @@ avec en plus un **espace enfants** ludique (mascottes cartoon, mondes colorés,
 
 **Espace enfants (4–10 ans)**
 
-- 4 mondes à explorer (animaux, couleurs & nombres, famille, nourriture)
-  avec des mascottes SVG dessinées façon dessin animé.
-- Mini-jeux illustrés par émojis : on écoute, on touche, on répète.
-- Récompenses en étoiles, interface géante et colorée.
+- 5 mondes à explorer (école des lettres, animaux, couleurs & nombres,
+  famille, nourriture) avec des mascottes SVG façon dessin animé qui
+  encouragent l'enfant pendant le jeu.
+- De vrais jeux : **bulles magiques** (écoute et éclate la bonne bulle),
+  **memory** (retrouver les paires émoji ↔ mot), **tracé des lettres au
+  doigt** (canvas avec validation du geste), mots illustrés par émojis.
+- Récompenses : étoiles, confettis, interface géante et colorée.
+
+**Écriture (les deux modes)**
+
+- Exercices de tracé au doigt sur gabarit pour les 29 lettres, intégrés aux
+  leçons d'alphabet du parcours adulte comme aux jeux enfants.
 
 ## 🚀 Démarrer
 

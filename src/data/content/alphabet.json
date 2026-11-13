@@ -429,7 +429,7 @@
     {
       "id": "les_alpha_01",
       "title_fr": "Lettres : ا ب ت ث",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -506,13 +506,33 @@
               "right": "thā’"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "ا",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ب",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ت",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ث",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_02",
       "title_fr": "Lettres : ج ح خ",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -578,13 +598,28 @@
               "right": "khā’"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "ج",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ح",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "خ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_03",
       "title_fr": "Lettres : د ذ ر ز",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -661,13 +696,33 @@
               "right": "zāy"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "د",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ذ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ر",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ز",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_04",
       "title_fr": "Lettres : س ش ص ض",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -744,13 +799,33 @@
               "right": "ḍād"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "س",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ش",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ص",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ض",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_05",
       "title_fr": "Lettres : ط ظ ع غ",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -827,13 +902,33 @@
               "right": "ghayn"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "ط",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ظ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ع",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "غ",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_06",
       "title_fr": "Lettres : ف ق ك ل",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -908,13 +1003,33 @@
               "right": "lām"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "ف",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ق",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ك",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ل",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_07",
       "title_fr": "Lettres : م ن ه",
-      "xp": 10,
+      "xp": 15,
       "exercises": [
         {
           "type": "intro_letter",
@@ -979,13 +1094,28 @@
               "right": "hā’"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "م",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ن",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ه",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },
     {
       "id": "les_alpha_08",
       "title_fr": "Lettres : و ي ء + révision",
-      "xp": 15,
+      "xp": 20,
       "exercises": [
         {
           "type": "intro_letter",
@@ -1056,6 +1186,21 @@
               "right": "qāf"
             }
           ]
+        },
+        {
+          "type": "trace",
+          "letter": "و",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ي",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
+        },
+        {
+          "type": "trace",
+          "letter": "ء",
+          "prompt_fr": "✍️ À toi d'écrire : trace la lettre sur le gabarit."
         }
       ]
     },

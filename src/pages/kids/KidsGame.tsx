@@ -33,6 +33,7 @@ export function KidsGame() {
         xp={10}
         variant="kids"
         accent={colors.main}
+        mascot={world.mascot}
         exitTo="/kids"
         onFinish={(stars) => completeLesson(game.id, 10, stars, true)}
       />
