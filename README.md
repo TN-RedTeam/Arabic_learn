@@ -36,7 +36,9 @@ avec en plus un **espace enfants** ludique (mascottes cartoon, mondes colorés,
 - De vrais jeux : **bulles magiques** (écoute et éclate la bonne bulle),
   **memory** (retrouver les paires émoji ↔ mot), **tracé des lettres au
   doigt** (canvas avec validation du geste), mots illustrés par émojis.
-- Récompenses : étoiles, confettis, interface géante et colorée.
+- Récompenses : étoiles, confettis, interface géante et colorée, et un
+  **album d'autocollants** façon Panini — un autocollant surprise par jeu
+  terminé, un doré par monde complété, la couronne quand l'album est plein.
 
 **Écriture (les deux modes)**
 

@@ -29,6 +29,8 @@ interface LessonPlayerProps {
   onFinish: (stars: 1 | 2 | 3) => void;
   /** Mascotte-coach affichée en mode enfants. */
   mascot?: string;
+  /** Autocollants gagnés à la fin (révélés sur l'écran de victoire). */
+  rewards?: { emoji: string; name_fr: string; gold?: boolean }[];
 }
 
 const COACH_PRAISE = ['Bravo ! 🎉', 'Super ! ⭐', 'Génial ! 🚀', 'Continue comme ça ! 💪', 'Trop fort ! 🌟'];
@@ -44,7 +46,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, onFinish, mascot }: LessonPlayerProps) {
+export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, onFinish, mascot, rewards }: LessonPlayerProps) {
   const [idx, setIdx] = useState(0);
   const [mistakes, setMistakes] = useState(0);
   const [done, setDone] = useState(false);
@@ -84,6 +86,25 @@ export function LessonPlayer({ title, exercises, xp, variant, accent, exitTo, on
         <p className="text-lg font-bold" style={{ color: accent }}>
           +{xp} XP
         </p>
+        {rewards && rewards.length > 0 && (
+          <div className="flex flex-wrap items-stretch justify-center gap-4">
+            {rewards.map((sticker, i) => (
+              <div
+                key={sticker.name_fr}
+                className={`animate-pop rounded-3xl border-4 bg-white px-6 py-4 shadow-xl ${
+                  sticker.gold ? 'sticker-gold border-amber-400' : 'border-white'
+                }`}
+                style={{ animationDelay: `${0.3 + i * 0.35}s`, animationFillMode: 'backwards' }}
+              >
+                <p className="text-xs font-extrabold tracking-widest text-amber-600 uppercase">
+                  📔 Nouvel autocollant !
+                </p>
+                <div className="mt-1 text-6xl">{sticker.emoji}</div>
+                <p className="mt-1 font-black">{sticker.name_fr}</p>
+              </div>
+            ))}
+          </div>
+        )}
         <Link
           to={exitTo}
           className="rounded-2xl px-10 py-4 text-lg font-extrabold text-white shadow-lg transition hover:scale-105 active:scale-95"

@@ -41,6 +41,9 @@ initiation pour leurs enfants.
 - [x] Vrais jeux : memory (paires émoji ↔ mot), bulles magiques (écoute et
       éclate), tracé des lettres au doigt (canvas avec validation du geste)
       — le tracé est aussi intégré au parcours adulte (module alphabet).
+- [x] Album d'autocollants : 26 autocollants dérivés de la progression
+      (1 par jeu, 1 doré par monde, la couronne finale), révélation surprise
+      sur l'écran de victoire, album façon Panini avec emplacements vides.
 
 ## 3. Prochaines étapes
 

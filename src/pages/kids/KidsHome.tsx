@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { kidsWorlds } from '../../data/course';
 import { useProgress } from '../../lib/progress';
+import { TOTAL_STICKERS, unlockedCount } from '../../data/stickers';
 import { Mascot } from '../../components/Mascots';
 import { Stars } from '../../components/ui';
 
@@ -24,9 +25,17 @@ export function KidsHome() {
         >
           ← Accueil
         </Link>
-        <span className="flex items-center gap-2 rounded-full bg-white/80 px-5 py-2 text-lg font-black text-amber-600 shadow">
-          ⭐ {state.kidsStars}
-        </span>
+        <div className="flex items-center gap-2">
+          <Link
+            to="/kids/album"
+            className="flex items-center gap-1 rounded-full bg-white/80 px-4 py-2 text-lg font-black text-amber-600 shadow transition hover:scale-105 hover:bg-white"
+          >
+            📔 <span className="text-sm">{unlockedCount(state)}/{TOTAL_STICKERS}</span>
+          </Link>
+          <span className="flex items-center gap-2 rounded-full bg-white/80 px-5 py-2 text-lg font-black text-amber-600 shadow">
+            ⭐ {state.kidsStars}
+          </span>
+        </div>
       </header>
 
       <main className="mx-auto max-w-4xl px-4 pb-16">
@@ -36,6 +45,20 @@ export function KidsHome() {
           </h1>
           <p className="mt-2 text-lg font-bold text-ink/60">Choisis ton monde et pars à l'aventure 🚀</p>
         </div>
+
+        <Link
+          to="/kids/album"
+          className="mx-auto mt-6 flex max-w-md items-center justify-between gap-3 rounded-3xl bg-gradient-to-r from-amber-300 to-yellow-200 px-6 py-4 shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
+        >
+          <span className="text-4xl">📔</span>
+          <span className="flex-1 text-left">
+            <span className="block text-lg font-black text-amber-900">Mon album d'autocollants</span>
+            <span className="text-sm font-bold text-amber-800/70">
+              {unlockedCount(state)}/{TOTAL_STICKERS} autocollants gagnés
+            </span>
+          </span>
+          <span className="text-2xl font-black text-amber-700">→</span>
+        </Link>
 
         <div className="mt-10 space-y-8">
           {kidsWorlds.map((world) => {

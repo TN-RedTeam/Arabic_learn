@@ -1,13 +1,22 @@
+import { useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { findKidsGame } from '../../data/course';
 import { useProgress } from '../../lib/progress';
+import { rewardsForFinishing } from '../../data/stickers';
 import { LessonPlayer } from '../../features/LessonPlayer';
 import { worldColors } from './KidsHome';
 
 export function KidsGame() {
   const { gameId } = useParams();
-  const { completeLesson } = useProgress();
+  const { state, completeLesson } = useProgress();
   const found = gameId ? findKidsGame(gameId) : null;
+  // Ce que la victoire va débloquer, figé par jeu : recalculé quand on change
+  // de jeu (la route /kids/jeu/:id ne re-monte pas le composant), mais pas
+  // quand le score s'enregistre — la révélation doit rester affichée.
+  const rewardsRef = useRef<{ gameId: string; rewards: ReturnType<typeof rewardsForFinishing> } | null>(null);
+  if (gameId && rewardsRef.current?.gameId !== gameId) {
+    rewardsRef.current = { gameId, rewards: rewardsForFinishing(state, gameId) };
+  }
 
   if (!found) {
     return (
@@ -34,6 +43,7 @@ export function KidsGame() {
         variant="kids"
         accent={colors.main}
         mascot={world.mascot}
+        rewards={rewardsRef.current?.rewards ?? []}
         exitTo="/kids"
         onFinish={(stars) => completeLesson(game.id, 10, stars, true)}
       />
