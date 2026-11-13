@@ -1,7 +1,12 @@
+@import './fonts.css';
 @import 'tailwindcss';
 
 @theme {
-  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif;
+  /* 'Noto Naskh Arabic' est dans la pile par défaut : grâce à unicode-range,
+     seuls les caractères arabes l'utilisent. L'arabe incrusté dans un texte
+     français est donc toujours rendu en Naskh correct, jamais en police de
+     secours du système. */
+  --font-sans: 'Nunito', 'Noto Naskh Arabic', ui-sans-serif, system-ui, sans-serif;
   --font-arabic: 'Noto Naskh Arabic', 'Amiri', 'Geeza Pro', 'Traditional Arabic', serif;
 
   /* Marque : sarcelle profond + sable doré */
@@ -65,6 +70,15 @@ body {
   font-family: var(--font-arabic);
   direction: rtl;
   unicode-bidi: isolate;
+  /* Les harakat s'empilent au-dessus et en dessous des lettres :
+     sans interligne suffisant, elles sont rognées ou chevauchent. */
+  line-height: 1.8;
+}
+
+/* Jamais d'espacement entre lettres arabes : cela briserait les ligatures. */
+.font-arabic,
+:lang(ar) {
+  letter-spacing: 0 !important;
 }
 
 /* Boutons de réponse : retour visuel */

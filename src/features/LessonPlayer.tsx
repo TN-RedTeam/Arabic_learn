@@ -11,7 +11,7 @@ import type {
   MatchEx,
 } from '../lib/content';
 import { speakArabic } from '../lib/tts';
-import { Bi, isArabic, ProgressBar, SpeakerButton, Stars } from '../components/ui';
+import { Bi, isArabic, isMostlyArabic, ProgressBar, SpeakerButton, Stars } from '../components/ui';
 
 export type Variant = 'adult' | 'kids';
 
@@ -289,7 +289,7 @@ function ChoiceView({
     if (answered) return;
     setSelected(opt);
     if (opt !== ex.answer) onMistake();
-    else if (isArabic(opt)) speakArabic(opt);
+    else if (isMostlyArabic(opt)) speakArabic(opt);
   };
 
   return (
@@ -374,7 +374,7 @@ function MatchView({
   const pickLeft = (l: string) => {
     if (matched.has(l)) return;
     setSelectedLeft(l);
-    if (isArabic(l)) speakArabic(l);
+    if (isMostlyArabic(l)) speakArabic(l);
   };
 
   const pickRight = (r: string) => {

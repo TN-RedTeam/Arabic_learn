@@ -4,9 +4,22 @@ export function isArabic(text: string): boolean {
   return /[؀-ۿ]/.test(text);
 }
 
-/** Affiche un texte en appliquant la police arabe si nécessaire. */
+/** Vrai si le texte est essentiellement en arabe (et pas une phrase française
+ * qui cite une lettre arabe) : seul ce cas doit être prononcé. */
+export function isMostlyArabic(text: string): boolean {
+  const arabic = (text.match(/[؀-ۿ]/g) ?? []).length;
+  const latin = (text.match(/[a-zA-ZÀ-ÿ]/g) ?? []).length;
+  return arabic > 0 && arabic >= latin;
+}
+
+/** Affiche un texte en appliquant la police arabe (et lang/RTL) si nécessaire. */
 export function Bi({ text, className = '' }: { text: string; className?: string }) {
-  return <span className={`${isArabic(text) ? 'font-arabic' : ''} ${className}`}>{text}</span>;
+  const ar = isArabic(text);
+  return (
+    <span lang={ar ? 'ar' : undefined} className={`${ar ? 'font-arabic' : ''} ${className}`}>
+      {text}
+    </span>
+  );
 }
 
 export function Stars({ count, size = 'text-3xl' }: { count: number; size?: string }) {
