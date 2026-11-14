@@ -698,15 +698,15 @@
           "exercises": [
             {
               "type": "intro_word",
-              "word": "بابا",
+              "word": "أَبي",
               "emoji": "👨",
-              "prompt_fr": "بابا (bābā) — papa !"
+              "prompt_fr": "أَبي (abī) — mon papa !"
             },
             {
               "type": "intro_word",
-              "word": "ماما",
+              "word": "أُمّي",
               "emoji": "👩",
-              "prompt_fr": "ماما (māmā) — maman !"
+              "prompt_fr": "أُمّي (ummī) — ma maman !"
             },
             {
               "type": "intro_word",
@@ -725,16 +725,16 @@
               "prompt_fr": "Où est maman ?",
               "emoji": "👩",
               "options": [
-                "ماما",
-                "بابا",
+                "أُمّي",
+                "أَبي",
                 "أَخ"
               ],
-              "answer": "ماما"
+              "answer": "أُمّي"
             },
             {
               "type": "listen_choose",
               "prompt_fr": "Écoute… qui entends-tu ?",
-              "tts": "بابا",
+              "tts": "أَبي",
               "options": [
                 "👨",
                 "👩",
@@ -748,11 +748,11 @@
               "pairs": [
                 {
                   "left": "👨",
-                  "right": "بابا"
+                  "right": "أَبي"
                 },
                 {
                   "left": "👩",
-                  "right": "ماما"
+                  "right": "أُمّي"
                 },
                 {
                   "left": "👧",
@@ -921,11 +921,11 @@
               "pairs": [
                 {
                   "left": "👨",
-                  "right": "بابا"
+                  "right": "أَبي"
                 },
                 {
                   "left": "👩",
-                  "right": "ماما"
+                  "right": "أُمّي"
                 },
                 {
                   "left": "👧",
