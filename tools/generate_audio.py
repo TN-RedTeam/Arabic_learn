@@ -2,39 +2,56 @@
 """Génère l'audio natif de tous les textes arabes du contenu pédagogique.
 
 Parcourt src/data/content/*.json, extrait chaque chaîne arabe susceptible
-d'être prononcée par l'app, puis génère un MP3 par chaîne avec une voix
-neuronale arabe (Microsoft Edge TTS, gratuit) dans public/audio/.
+d'être prononcée par l'app, puis génère un MP3 par chaîne dans public/audio/.
 Un manifeste src/data/audio_manifest.json associe chaque texte à son fichier.
+
+Trois fournisseurs de voix (option --provider) :
+
+  edge        (défaut) Voix neuronales Microsoft via edge-tts. Gratuit, sans
+              clé — parfait pour le développement. API non officielle : pour
+              une distribution commerciale, utiliser azure ou elevenlabs.
+  azure       Mêmes voix via le service officiel Azure Speech (SLA + licence
+              commerciale). Clés : AZURE_SPEECH_KEY et AZURE_SPEECH_REGION
+              (ex. francecentral, westeurope). Niveau gratuit F0 :
+              500 000 caractères neuronaux / mois — tout le contenu de
+              l'app (~15 000 caractères) tient très largement dedans.
+  elevenlabs  Voix ElevenLabs (eleven_multilingual_v2), souvent les plus
+              naturelles du marché. Clés : ELEVENLABS_API_KEY et
+              ELEVENLABS_VOICE_ID (une voix arabe de la Voice Library).
+              Niveau gratuit ~10 000 crédits / mois pour tester ; usage
+              commercial à partir du plan payant.
 
 Cas particulier : pour une lettre isolée (ex. « ب »), on prononce son NOM
 (« باء ») — prononcer le caractère seul donne un résultat aléatoire.
 
 Usage :
-    pip install edge-tts
-    python tools/generate_audio.py            # génère les fichiers manquants
-    python tools/generate_audio.py --force    # regénère tout
-    python tools/generate_audio.py --list-voices
+    pip install edge-tts                      # seulement pour --provider edge
+    python tools/generate_audio.py                        # fichiers manquants
+    python tools/generate_audio.py --force                # tout regénérer
+    python tools/generate_audio.py --provider azure --force
+    python tools/generate_audio.py --list-voices          # voix arabes (edge/azure)
+
+En changeant de fournisseur, utiliser --force : les noms de fichiers sont
+dérivés du texte, pas du fournisseur, pour que l'app n'ait rien à savoir.
 """
 
 import argparse
 import asyncio
 import hashlib
 import json
+import os
 import re
 import sys
+import urllib.request
 from pathlib import Path
-
-try:
-    import edge_tts
-except ImportError:
-    sys.exit("edge-tts manquant : pip install edge-tts")
+from xml.sax.saxutils import escape
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT_DIR = ROOT / "src" / "data" / "content"
 AUDIO_DIR = ROOT / "public" / "audio"
 MANIFEST = ROOT / "src" / "data" / "audio_manifest.json"
 
-VOICE = "ar-SA-ZariyahNeural"  # voix féminine claire ; voir --list-voices
+DEFAULT_VOICE = "ar-SA-ZariyahNeural"  # edge & azure ; voir --list-voices
 RATE = "-15%"  # légèrement ralenti pour l'apprentissage
 CONCURRENCY = 4
 
@@ -111,13 +128,73 @@ def filename_for(pronounce: str) -> str:
     return hashlib.sha1(pronounce.encode("utf-8")).hexdigest()[:12] + ".mp3"
 
 
-async def synthesize(pronounce: str, dest: Path, semaphore: asyncio.Semaphore):
+# ---------------------------------------------------------------- fournisseurs
+
+
+async def synth_edge(pronounce: str, dest: Path, voice: str):
+    import edge_tts  # importé ici : inutile pour azure/elevenlabs
+
+    tts = edge_tts.Communicate(pronounce, voice, rate=RATE)
+    await tts.save(str(dest))
+
+
+def _http_post(url: str, headers: dict, body: bytes, dest: Path):
+    req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        dest.write_bytes(resp.read())
+
+
+async def synth_azure(pronounce: str, dest: Path, voice: str):
+    key = os.environ.get("AZURE_SPEECH_KEY")
+    region = os.environ.get("AZURE_SPEECH_REGION")
+    if not key or not region:
+        sys.exit("AZURE_SPEECH_KEY et AZURE_SPEECH_REGION sont requis pour --provider azure")
+    ssml = (
+        "<speak version='1.0' xml:lang='ar-SA'>"
+        f"<voice name='{voice}'><prosody rate='{RATE}'>{escape(pronounce)}</prosody></voice>"
+        "</speak>"
+    )
+    await asyncio.to_thread(
+        _http_post,
+        f"https://{region}.tts.speech.microsoft.com/cognitiveservices/v1",
+        {
+            "Ocp-Apim-Subscription-Key": key,
+            "Content-Type": "application/ssml+xml",
+            "X-Microsoft-OutputFormat": "audio-24khz-96kbitrate-mono-mp3",
+            "User-Agent": "alif-audio-pipeline",
+        },
+        ssml.encode("utf-8"),
+        dest,
+    )
+
+
+async def synth_elevenlabs(pronounce: str, dest: Path, voice: str):
+    key = os.environ.get("ELEVENLABS_API_KEY")
+    voice_id = voice if voice != DEFAULT_VOICE else os.environ.get("ELEVENLABS_VOICE_ID")
+    if not key or not voice_id:
+        sys.exit(
+            "ELEVENLABS_API_KEY et ELEVENLABS_VOICE_ID (ou --voice <id>) sont requis "
+            "pour --provider elevenlabs"
+        )
+    body = json.dumps({"text": pronounce, "model_id": "eleven_multilingual_v2"}).encode("utf-8")
+    await asyncio.to_thread(
+        _http_post,
+        f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}?output_format=mp3_44100_128",
+        {"xi-api-key": key, "Content-Type": "application/json"},
+        body,
+        dest,
+    )
+
+
+PROVIDERS = {"edge": synth_edge, "azure": synth_azure, "elevenlabs": synth_elevenlabs}
+
+
+async def synthesize(provider: str, pronounce: str, dest: Path, voice: str, semaphore: asyncio.Semaphore):
     async with semaphore:
         for attempt in range(3):
             try:
-                tts = edge_tts.Communicate(pronounce, VOICE, rate=RATE)
-                await tts.save(str(dest))
-                if dest.stat().st_size > 0:
+                await PROVIDERS[provider](pronounce, dest, voice)
+                if dest.exists() and dest.stat().st_size > 0:
                     return
             except Exception as exc:  # noqa: BLE001 — on retente puis on signale
                 if attempt == 2:
@@ -126,12 +203,16 @@ async def synthesize(pronounce: str, dest: Path, semaphore: asyncio.Semaphore):
 
 
 async def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--force", action="store_true", help="regénérer les fichiers existants")
-    parser.add_argument("--list-voices", action="store_true", help="lister les voix arabes")
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("--provider", choices=sorted(PROVIDERS), default="edge", help="fournisseur de voix (défaut : edge)")
+    parser.add_argument("--voice", default=DEFAULT_VOICE, help=f"nom de voix (edge/azure, défaut {DEFAULT_VOICE}) ou voice_id ElevenLabs")
+    parser.add_argument("--force", action="store_true", help="regénérer les fichiers existants (obligatoire après un changement de fournisseur)")
+    parser.add_argument("--list-voices", action="store_true", help="lister les voix arabes edge/azure")
     args = parser.parse_args()
 
     if args.list_voices:
+        import edge_tts
+
         voices = await edge_tts.list_voices()
         for voice in voices:
             if voice["Locale"].startswith("ar"):
@@ -150,9 +231,9 @@ async def main():
     # Plusieurs textes peuvent partager la même prononciation → dédoublonner.
     todo = list({dest: (pron, dest) for pron, dest in todo}.values())
 
-    print(f"{len(texts)} textes arabes, {len(todo)} fichiers à générer (voix {VOICE}).")
+    print(f"{len(texts)} textes arabes, {len(todo)} fichiers à générer ({args.provider}, voix {args.voice}).")
     semaphore = asyncio.Semaphore(CONCURRENCY)
-    await asyncio.gather(*(synthesize(pron, dest, semaphore) for pron, dest in todo))
+    await asyncio.gather(*(synthesize(args.provider, pron, dest, args.voice, semaphore) for pron, dest in todo))
 
     # Ne référencer que les fichiers réellement présents.
     manifest = {t: f for t, f in manifest.items() if (AUDIO_DIR / f).exists()}

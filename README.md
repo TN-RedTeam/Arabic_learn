@@ -58,20 +58,38 @@ npm run preview   # sert le build de production en local
 
 ## 🔊 Régénérer l'audio
 
-Les MP3 (`public/audio/`) sont générés par une voix neuronale arabe via
-[edge-tts](https://github.com/rany2/edge-tts) (gratuit). Après avoir ajouté ou
-modifié du contenu dans `src/data/content/`, il suffit de relancer :
+Les MP3 (`public/audio/`) sont générés par une voix neuronale arabe. Le script
+extrait tous les textes arabes du contenu, produit un MP3 par texte et met à
+jour `src/data/audio_manifest.json`. Les lettres isolées sont prononcées par
+leur nom (« ب » → « باء »). Après toute modification du contenu :
 
 ```bash
-pip install edge-tts
 python tools/generate_audio.py            # génère les fichiers manquants
 python tools/generate_audio.py --force    # regénère tout
-python tools/generate_audio.py --list-voices  # autres voix arabes
 ```
 
-Le script extrait automatiquement tous les textes arabes du contenu, produit
-un MP3 par texte et met à jour `src/data/audio_manifest.json`. Les lettres
-isolées sont prononcées par leur nom (« ب » → « باء »).
+Trois fournisseurs de voix (`--provider`), mêmes fichiers en sortie :
+
+| Fournisseur | Qualité | Licence commerciale | Coût |
+|---|---|---|---|
+| `edge` (défaut) | bonne (voix Microsoft) | ❌ API non officielle → dev uniquement | gratuit, sans clé (`pip install edge-tts`) |
+| `azure` | identique à edge (mêmes voix, service officiel) + SSML | ✅ | **F0 gratuit : 500 000 car./mois** (tout le contenu ≈ 15 000 car.), puis ~15 €/M car. |
+| `elevenlabs` | la plus naturelle du marché | ✅ dès le plan payant (~5 $/mois) | ~10 000 crédits/mois gratuits pour tester |
+
+```bash
+# Azure (créer une ressource Speech, niveau F0 gratuit, sur portal.azure.com)
+AZURE_SPEECH_KEY=xxx AZURE_SPEECH_REGION=francecentral \
+  python tools/generate_audio.py --provider azure --force
+
+# ElevenLabs (choisir une voix arabe dans la Voice Library)
+ELEVENLABS_API_KEY=xxx ELEVENLABS_VOICE_ID=xxx \
+  python tools/generate_audio.py --provider elevenlabs --force
+```
+
+`--force` est nécessaire au changement de fournisseur (les noms de fichiers ne
+dépendent que du texte, l'app n'a donc rien à savoir). Pour une app de
+référence, l'étape ultime reste l'enregistrement studio d'un locuteur natif
+pour l'alphabet et les مخارج ; le TTS couvre le reste du vocabulaire.
 
 ## 📦 Déploiement
 
